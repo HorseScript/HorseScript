@@ -11,30 +11,44 @@
 # Anything that has not been determined by the above rules
 # will be considered to be owned by HorseScript,
 # and will be referenced to the members of HorseScript.
+# I would add @HorseScript to the list of owners,
+# however I cannot add organizations to the list.
 
-# Current Members: @afkvido
-
-*.* @afkvido
+*.* @HorseScript
 
 
 
 
 
 # Interpreter was made by gemsvidø (@afkvido).
-# Any other files contributed by others,
-# those will be referenced somewhere below.
+# Any other files contributed to Interpreter by others,
+# will be referenced somewhere below.
+
 /Interpreter/ @afkvido
 
 
 
 
 
+# Terminal was made by gemsvidø (@afkvido).
+# Any other files contributed to Terminal by others,
+# will be referenced somewhere below.
+
+/Terminal/ @afkvido
 
 
 
-# License is made by @mozilla,
-# but was chosen by @afkvido.
-/LICENSE.txt @mozilla
+
+
+# The Utilities were made by gemsvidø (@afkvido).
+# Any other files contributed to Utilities by others,
+# will be referenced somewhere below.
+
+/Utility/ @afkvido
+
+
+
+
 
 
 
