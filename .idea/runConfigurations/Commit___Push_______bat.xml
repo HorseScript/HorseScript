@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Commit &amp; Push | bat" type="BatchConfigurationType" factoryName="Batch">
+  <configuration default="false" name="Commit &amp; Push     | bat" type="BatchConfigurationType" factoryName="Batch">
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="PARENT_ENVS" value="true" />
