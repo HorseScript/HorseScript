@@ -12,7 +12,7 @@
 # will be considered to be owned by HorseScript,
 # and will be referenced to the members of HorseScript.
 # I would add @HorseScript to the list of owners,
-# however I cannot add organizations to the list.
+# however it's not possible to add organizations to the list.
 
 *.* @HorseScript
 
