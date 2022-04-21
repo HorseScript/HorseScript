@@ -17,7 +17,6 @@ public class Main {
         System.out.println("1 - Interpret Line from ROM String");
         System.out.println("2 - Interpret File from ROM filepath");
         System.out.println("3 - Open Infinite HorseScript Console");
-        System.out.println("4 - Open HorseScript Terminal");
         System.out.print(ROM.purple + "Enter HorseScript utility: ");
 
         RAM.useROM = scanner1.nextByte();
@@ -44,9 +43,6 @@ public class Main {
         }
         case 3 -> {
             Console.main(null);
-        }
-        case 4 -> {
-            Terminal.main(null);
         }
         default -> {
             throw new IllegalStateException("Unexpected value: " + RAM.useROM);

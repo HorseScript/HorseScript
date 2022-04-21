@@ -32,8 +32,7 @@ hs_err_pid*
 **/out/
 
 
-# IntelliJ IDEA project files
-/.idea/misc.xml
+# IntelliJ IDEA unwanted generated project files
 /.idea/workspace.xml
 /.idea/rebar.xml
 /.idea/shelf/
