@@ -5,5 +5,39 @@
 # email address if you prefer, as the code owner.
 
 
-# Anything that has not been determined by the above rules will be cosidered to be owned by @HorseScript
-*.* @HorseScript
+# ------- BEGIN CODEOWNERS -------
+
+
+# Anything that has not been determined by the above rules
+# will be considered to be owned by HorseScript,
+# and will be referenced to the members of HorseScript.
+
+# Current Members: @afkvido
+
+*.* @afkvido
+
+
+
+
+
+# Interpreter was made by gemsvidø (@afkvido).
+# Any other files contributed by others,
+# those will be referenced somewhere below.
+/Interpreter/ @afkvido
+
+
+
+
+
+
+
+
+# License is made by @mozilla,
+# but was chosen by @afkvido.
+/LICENSE.txt @mozilla
+
+
+
+
+
+# ------- END CODEOWNERS -------
