@@ -25,6 +25,27 @@ public class Main {
                     System.out.println("Defaulting to HorseScript Launcher.");
                     ROM.launcher();
                 }
+            } else if (action.equals("6")) {
+
+                try {
+
+                    RAM.txtInterpret = args[1];
+
+
+                    for (int i = 2; i < args.length; i++) {
+
+                        RAM.txtInterpret += " " + args[i];
+
+                    }
+
+                    RAM.useROM = 6;
+
+                } catch (ArrayIndexOutOfBoundsException exception) {
+                    System.out.println("You need to specify a line of code to interpret.");
+                    System.out.println("Defaulting to HorseScript Launcher.");
+                    ROM.launcher();
+                }
+
             }
 
 
@@ -66,6 +87,9 @@ public class Main {
         }
         case 5 -> {
             ROM.fileFromString(RAM.toInterpret);
+        }
+        case 6 -> {
+            Interpreter.interpret(RAM.txtInterpret);
         }
         default -> {
             throw new IllegalStateException("Unexpected value: " + RAM.useROM);

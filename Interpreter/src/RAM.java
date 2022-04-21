@@ -25,6 +25,8 @@ public class RAM {
 
     public static File toInterpret;
 
+    public static String txtInterpret;
+
 
     // BEGIN VARIABLE HANDLING
 
