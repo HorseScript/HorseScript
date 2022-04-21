@@ -38,6 +38,7 @@ public class Main {
 
                     }
 
+
                     RAM.useROM = 6;
 
                 } catch (ArrayIndexOutOfBoundsException exception) {
