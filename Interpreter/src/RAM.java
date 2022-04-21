@@ -3,6 +3,7 @@ import resources.Constant;
 import resources.SearchTypes;
 import resources.Variable;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -21,6 +22,8 @@ public class RAM {
     public static Byte useROM = -1;
 
     public static volatile @NotNull Boolean debug = false;
+
+    public static File toInterpret;
 
 
     // BEGIN VARIABLE HANDLING

@@ -1,3 +1,4 @@
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
@@ -7,19 +8,35 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+        try {
+
+            String action = args[0];
+
+
+            if (action.equals("5")) {
+
+                try {
+                    RAM.toInterpret = new File(args[1]);
+
+                    RAM.useROM = 5;
+
+                } catch (ArrayIndexOutOfBoundsException exception) {
+                    System.out.println("You need to specify a filepath of a file to interpret");
+                    System.out.println("Defaulting to HorseScript Launcher.");
+                    ROM.launcher();
+                }
+            }
 
 
 
-    Scanner scanner1 = new Scanner(System.in);
-    System.out.println(ROM.green + "HorseScript Launcher | HorseScript Version " + ROM.VERSION);
-        System.out.println(ROM.blue + "\nHorseScript Utilities");
-        System.out.println(ROM.yellow + "0 - Interpret Line From Scanner");
-        System.out.println("1 - Interpret Line from ROM String");
-        System.out.println("2 - Interpret File from ROM filepath");
-        System.out.println("3 - Open Infinite HorseScript Console");
-        System.out.print(ROM.purple + "Enter HorseScript utility: ");
+        } catch (ArrayIndexOutOfBoundsException exception) {
+            System.out.println(ROM.gray + "No command line args specified, defaulting to HorseScript Launcher.");
+            ROM.launcher();
+        }
 
-        RAM.useROM = scanner1.nextByte();
+
+
+
 
 
     switch (RAM.useROM) {
@@ -44,6 +61,12 @@ public class Main {
         case 3 -> {
             Console.main(null);
         }
+        case 4 -> {
+            ROM.fileFromScanner();
+        }
+        case 5 -> {
+            ROM.fileFromString(RAM.toInterpret);
+        }
         default -> {
             throw new IllegalStateException("Unexpected value: " + RAM.useROM);
         }
@@ -54,5 +77,7 @@ public class Main {
 
 
     }
+
+
 
 }

@@ -55,12 +55,13 @@ public final class ROM {
     // RAM VARIABLES
 
 
+    public static volatile @NotNull String workingDirectory = System.getProperty("user.dir");
 
-    public static @NotNull String directory = "";
+    public static volatile @NotNull String directory = "";
 
     public static @NotNull String homeDir = "";
 
-    public static @NotNull String terminal_indent = cyan + "> " + white;
+    public static volatile @NotNull String terminal_indent = cyan + "> " + white;
 
 
 

@@ -109,8 +109,8 @@ public class Terminal {
 
         if (cmd3.equals("horse dist")) {
 
-            Files.copy(new File(ROM.homeDir + "/IdeaProjects/Terminal/InterpreterTerminal.jar").toPath(),new File(ROM.directory + "/InterpreterTerminal.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
-            Runtime.getRuntime().exec("zsh java -jar InterpreterTerminal.jar dist/index.hscript", null, new File(ROM.directory));
+            Files.copy(new File(ROM.workingDirectory + "/Terminal/InterpreterTerminal.jar").toPath(),new File(ROM.directory + "/InterpreterTerminal.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
+            Runtime.getRuntime().exec("java -jar InterpreterTerminal.jar dist/index.hscript", null, new File(ROM.directory));
 
 
         }
