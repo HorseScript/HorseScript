@@ -1,0 +1,4 @@
+package horse
+
+object help {
+}
