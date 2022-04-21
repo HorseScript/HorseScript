@@ -1,0 +1,9 @@
+# See https://help.github.com/en/articles/about-code-owners
+# to learn more about code owners.
+# Order is important; the last matching pattern takes the most
+# precedence. You may specify either a GitHub username, or an
+# email address if you prefer, as the code owner.
+
+
+# Anything that has not been determined by the above rules will be cosidered to be owned by @HorseScript
+*.* @HorseScript
