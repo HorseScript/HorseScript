@@ -5,6 +5,8 @@
 
 package horse
 
+import resources.HorseError
+
 object horse {
 // Development: In development, though `horse print` works.
 
@@ -24,11 +26,7 @@ object horse {
             println("HorseScript horse library help\nCommands:\nhorse print")
         } else {
 
-            try {
-                throw ClassNotFoundException("HorseScript horse library: command not found")
-            } catch (e: Exception) {
-                println(e.message)
-            }
+            HorseError.badLine(line, "HorseScript horse library: command not found")
         }
 
     }

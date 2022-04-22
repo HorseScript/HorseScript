@@ -3,6 +3,8 @@
  * All rights reserved.
  */
 
+import resources.HorseError;
+
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,6 +14,9 @@ import java.util.zip.DataFormatException;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+
+
+
 
         try {
 
@@ -98,7 +103,7 @@ public class Main {
             Interpreter.interpret(RAM.txtInterpret);
         }
         default -> {
-            throw new IllegalStateException("Unexpected value: " + RAM.useROM);
+            throw new HorseError("[HorseScript] Unexpected value: " + RAM.useROM);
         }
 
 

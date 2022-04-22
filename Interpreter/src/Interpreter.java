@@ -4,6 +4,8 @@
  */
 
 import horse.*;
+import resources.HorseError;
+
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,6 +33,12 @@ public class Interpreter {
             String output;
 
             if (line.equals("")) {
+                // Newline
+                continue;
+            }
+
+            if (line.startsWith("~")) {
+                // Comment
                 continue;
             }
 
@@ -54,7 +62,7 @@ public class Interpreter {
                 ram._startsWith(line);
 
             } else {
-                throw new ParseException("Unknown command: " + line, 0);
+                HorseError.badLine(line, null);
             }
 
         }

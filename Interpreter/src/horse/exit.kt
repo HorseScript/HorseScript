@@ -10,6 +10,7 @@ import kotlin.system.exitProcess
 /** The exit module, definitely the simplest module in HorseScript.
  *
  * @author gemsvidø
+ * @since HorseScript 0.0.1
  *
  * */
 object exit {
