@@ -1,9 +1,11 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: "gemsvidø"
+- family-names: ""
+  given-names: "gemsvidø"
   orcid: "https://orcid.org/0000-0000-0000-0000"
-- family-names: "HorseScript"
+- family-names: ""
+  given-names: "HorseScript"
   orcid: "https://orcid.org/0000-0000-0000-0000"
 title: "HorseScript"
 version: 0.0.1
