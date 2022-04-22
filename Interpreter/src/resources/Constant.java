@@ -9,6 +9,7 @@ public final class Constant extends Variable {
     public final VariableTyping type;
 
     public Constant(String name, Object content, VariableTyping type) {
+        super(name);
         this.name = name;
         this.content = content;
         this.type = type;

@@ -1,5 +1,6 @@
 import org.jetbrains.annotations.NotNull;
 import resources.Constant;
+import resources.Result;
 import resources.SearchTypes;
 import resources.Variable;
 
@@ -41,7 +42,7 @@ public class RAM {
                 return true;
             } else {
                 System.out.println("Variable " + ((Variable) VariableOrConst).name + " is invalid.");
-                return false;
+                return Boolean.FALSE;
             }
 
 
@@ -53,8 +54,22 @@ public class RAM {
 
         } else {
             System.out.println(VariableOrConst.getClass() + " variables cannot be added to the variables RAM.");
-            return false;
+            return Boolean.FALSE;
         }
+    }
+
+    public static void editVar (Variable varToEdit, Variable newVar) {
+
+        if (varToEdit.name.equals(newVar.name)) {
+
+
+            int index = variables.indexOf(varToEdit);
+
+            variables.set(index, newVar);
+        } else {
+            System.out.println("The variable names do not match.");
+        }
+
     }
 
     public static @NotNull String getAll () {
@@ -65,41 +80,27 @@ public class RAM {
 
     public static @NotNull Object getVar (String match, SearchTypes type) {
 
-        /*
 
-        HERE LIES THE WRITABLE CODE, THE BOTTOM RETURN SWITCH IS MORE EFFECTIVE, BUT KINDA READ ONLY
-        THE BOTTOM RETURN SWITCH IS TECHNICALLY WRITABLE, JUST HARDER TO UNDERSTAND.
+
 
         switch (type) {
 
-            case CONTAINS_ANY: return CONTAINS_ANY(match);
+            case CONTAINS_ANY: if (CONTAINS_ANY(match) != Boolean.FALSE) return CONTAINS_ANY(match);
 
-            case CONTAINS_NAME: return CONTAINS_NAME(match);
+            case CONTAINS_NAME: if (CONTAINS_NAME(match) != Boolean.FALSE) return CONTAINS_NAME(match);
 
-            case CONTAINS_CONTENT: return CONTAINS_CONTENT(match);
+            case CONTAINS_CONTENT: if (CONTAINS_CONTENT(match) != Boolean.FALSE) return CONTAINS_CONTENT(match);
 
-            case EQUALS_ANY: return EQUALS_ANY(match);
+            case EQUALS_ANY: if (EQUALS_NAME(match) != Boolean.FALSE) return EQUALS_ANY(match);
 
-            case EQUALS_NAME: return EQUALS_NAME(match);
+            case EQUALS_NAME: if (EQUALS_NAME(match) != Boolean.FALSE) return EQUALS_NAME(match);
 
-            case EQUALS_CONTENT: return EQUALS_CONTENT(match);
+            case EQUALS_CONTENT: if (EQUALS_CONTENT(match) != Boolean.FALSE) return EQUALS_CONTENT(match);
 
             default: throw new IllegalStateException("You need a valid search type.");
         }
 
 
-         */
-
-
-        return switch (type) {
-            case CONTAINS_ANY -> CONTAINS_ANY(match);
-            case CONTAINS_NAME -> CONTAINS_NAME(match);
-            case CONTAINS_CONTENT -> CONTAINS_CONTENT(match);
-            case EQUALS_ANY -> EQUALS_ANY(match);
-            case EQUALS_NAME -> EQUALS_NAME(match);
-            case EQUALS_CONTENT -> EQUALS_CONTENT(match);
-            default -> throw new IllegalStateException("You need a valid search type.");
-        };
     }
 
     private static @NotNull Object CONTAINS_ANY (String match) {
@@ -154,7 +155,7 @@ public class RAM {
 
         System.out.println("No match found.");
 
-        return false;
+        return Result.NOT_FOUND;
 
 
     }
@@ -211,7 +212,7 @@ public class RAM {
 
         System.out.println("No match found.");
 
-        return false;
+        return Result.NOT_FOUND;
 
 
     }
@@ -268,7 +269,7 @@ public class RAM {
 
         System.out.println("No match found.");
 
-        return false;
+        return Result.NOT_FOUND;
 
 
     }
@@ -322,7 +323,7 @@ public class RAM {
 
         System.out.println("No match found.");
 
-        return false;
+        return Result.NOT_FOUND;
     }
 
     private static @NotNull Object EQUALS_CONTENT (String match) {
@@ -374,7 +375,7 @@ public class RAM {
 
         System.out.println("No match found.");
 
-        return false;
+        return Result.NOT_FOUND;
     }
 
     private static @NotNull Object EQUALS_NAME (String match) {
@@ -430,7 +431,7 @@ public class RAM {
 
         System.out.println("No match found.");
 
-        return false;
+        return Result.NOT_FOUND;
     }
 
     // END VARIABLE HANDLING

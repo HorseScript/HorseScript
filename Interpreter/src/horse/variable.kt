@@ -7,7 +7,7 @@ import resources.VariableTyping
 object variable {
 // Development: In development, but we have some version of it running.
 
-    const val version : String = "0.0.1"
+    const val version : String = "0.0.2"
 
 
     @JvmStatic fun _startsWith (line: String) {
@@ -114,6 +114,58 @@ object variable {
     @JvmStatic fun getAll (line : String) {
         val all : String = RAM.getAll()
         println(all)
+    }
+
+    @JvmStatic fun parseType (text : String, Content : String) : VariableTyping {
+
+
+        val out : Any
+
+        val typ : VariableTyping
+
+
+        when (text.lowercase()) {
+            "int", "integer" -> {
+                val int : Int = Content.toInt()
+                out = int
+                typ = VariableTyping.INTEGER
+                println("Variable Type: Integer")
+            }
+            "double" -> {
+                val double : Double = Content.toDouble()
+                out = double
+                typ = VariableTyping.DOUBLE
+                println("Variable Type: Double")
+            }
+            "string", "str" -> {
+                val string : String = Content
+                out = string
+                typ = VariableTyping.STRING
+                println("Variable Type: String")
+            }
+            "boolean", "bool" -> {
+                val boolean : Boolean = Content.toBoolean()
+                out = boolean
+                typ = VariableTyping.BOOLEAN
+                println("Variable Type: Boolean")
+            }
+            "character", "char" -> {
+                val char : Char = Content.toString().get(0);
+                out = char
+                typ = VariableTyping.CHARACTER
+                println("Variable Type: Character")
+            }
+            else -> {
+                val any : Any = Content
+                out = any
+                typ = VariableTyping.ANY
+                println("Variable Type: Any")
+            }
+        }
+
+
+
+        return typ
     }
 
 

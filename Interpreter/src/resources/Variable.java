@@ -2,7 +2,7 @@ package resources;
 
 public class Variable {
 
-    public String name;
+    public final String name;
 
     public Object content;
 
@@ -88,6 +88,8 @@ public class Variable {
 
     }
 
-    protected Variable() {}
+    protected Variable (String name) {
+        this.name = name;
+    }
 }
 
