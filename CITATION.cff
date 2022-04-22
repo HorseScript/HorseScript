@@ -1,9 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: "gemsvidø"
-  given-names: ""
 - family-names: "HorseScript"
+- family-names: "gemsvidø"
   given-names: ""
 title: "HorseScript"
 version: 0.0.1
