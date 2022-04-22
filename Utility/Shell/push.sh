@@ -1,6 +1,6 @@
-java -jar other/Resources/push.jar
+java -jar Utility/Resources/push.jar
 
-java -jar other/Resources/push_success.jar
+java -jar Utility/Resources/push_success.jar
 
 
 # push.jar source: https://github.com/afkvido/TextEntry-Popup
