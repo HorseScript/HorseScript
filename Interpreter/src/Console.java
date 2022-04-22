@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022, HorseScript
+ * All rights reserved.
+ */
+
 import java.util.Scanner;
 
 public class Console {

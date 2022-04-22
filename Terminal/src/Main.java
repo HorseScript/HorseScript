@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022, HorseScript
+ * All rights reserved.
+ */
+
 public class Main {
 
     public static void main (String[] args) throws Exception {

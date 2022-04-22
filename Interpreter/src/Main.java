@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022, HorseScript
+ * All rights reserved.
+ */
+
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;

@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022, HorseScript
+ * All rights reserved.
+ */
+
 package resources;
 
 public final class Constant extends Variable {

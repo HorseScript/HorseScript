@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022, HorseScript
+ * All rights reserved.
+ */
+
 import org.jetbrains.annotations.NotNull;
 import resources.Constant;
 import resources.Result;

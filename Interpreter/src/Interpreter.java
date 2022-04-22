@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2022, HorseScript
+ * All rights reserved.
+ */
+
 import horse.*;
 import java.text.ParseException;
 import java.util.ArrayList;

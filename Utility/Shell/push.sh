@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2022, HorseScript
+# All rights reserved.
+#
+
 java -jar Utility/Resources/push.jar
 
 java -jar Utility/Resources/push_success.jar
