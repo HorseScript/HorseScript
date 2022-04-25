@@ -57,6 +57,9 @@ public class Interpreter {
             } else if (line.toLowerCase().startsWith("var ") || line.equalsIgnoreCase("var")) {
                 variable._startsWith(line);
 
+            } else if (line.toLowerCase().startsWith("help ") || line.equalsIgnoreCase("help")) {
+                help._main(line);
+
 
             } else if (line.toLowerCase().startsWith("ram ") || line.equalsIgnoreCase("ram")) {
                 ram._startsWith(line);

@@ -11,9 +11,6 @@ import resources.SearchTypes
 import resources.Variable
 import resources.VariableTyping
 import java.util.*
-import kotlin.Exception
-import kotlin.String
-import kotlin.reflect.jvm.internal.impl.descriptors.impl.VariableDescriptorImpl
 
 object ram {
 // Development: In development
