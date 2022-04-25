@@ -27,6 +27,7 @@ public class Terminal {
 
     }
 
+
     protected static void RunTerm () throws Exception {
 
         Scanner scanner = new Scanner(System.in);
@@ -43,6 +44,7 @@ public class Terminal {
 
         }
     }
+
 
     protected static void evaluate_terminal (@NotNull String input) throws Exception {
 
@@ -64,7 +66,7 @@ public class Terminal {
 
 
         } else if (input.startsWith("eval ")) {
-            // TODO: Make this work
+            evaluator(input);
 
 
         } else if (input.startsWith("help")) {
@@ -147,7 +149,7 @@ public class Terminal {
         if (type.equals("hscript")) {
             toEval = code.replaceAll("\\\"", "\\\\\"");
         } else {
-            System.out.println(type + "is not a supported dialect of HorseScript.");
+            System.out.println(type + " is not a supported dialect of HorseScript.");
             System.out.println("Supported dialects: hscript");
             System.out.print("If you want to add this dialect, please see us on GitHub: ");
             System.out.println("https://github.com/HorseScript/HorseScript");
