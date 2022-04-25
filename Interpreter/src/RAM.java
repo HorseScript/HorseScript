@@ -43,8 +43,16 @@ public class RAM {
         if (VariableOrConst.getClass() == Variable.class) {
 
             if (((Variable) VariableOrConst).validate()) {
-                variables.add(VariableOrConst);
-                return true;
+
+                if (getVar(((Variable) VariableOrConst).name, SearchTypes.EQUALS_NAME) == null) {
+
+                    System.out.println("A variable with the name " + ((Variable) VariableOrConst).name + " already exists.");
+                    return Boolean.FALSE;
+                } else {
+
+                    variables.add(VariableOrConst);
+                    return Boolean.TRUE;
+                }
             } else {
                 System.out.println("Variable " + ((Variable) VariableOrConst).name + " is invalid.");
                 return Boolean.FALSE;
@@ -54,8 +62,15 @@ public class RAM {
 
         } else if (VariableOrConst.getClass() == Constant.class) {
 
-            variables.add(VariableOrConst);
-            return true;
+            if (getVar(((Constant) VariableOrConst).name, SearchTypes.EQUALS_NAME) == null) {
+
+                System.out.println("A constant with the name " + ((Constant) VariableOrConst).name + " already exists.");
+                return Boolean.FALSE;
+            } else {
+
+                variables.add(VariableOrConst);
+                return Boolean.TRUE;
+            }
 
         } else {
             System.out.println(VariableOrConst.getClass() + " variables cannot be added to the variables RAM.");
@@ -83,7 +98,7 @@ public class RAM {
 
 
 
-    public static @NotNull Object getVar (String match, SearchTypes type) {
+    public static Object getVar (@NotNull String match, @NotNull SearchTypes type) {
 
 
 

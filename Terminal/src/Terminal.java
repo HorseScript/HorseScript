@@ -56,8 +56,10 @@ public class Terminal {
 
 
         } else if (input.replace(" ", "").equals("eval")) {
-            System.out.println("Eval command: eval <code>");
-            System.out.println("This command will evaluate a line of HorseScript code.");
+            System.out.println("Eval command: eval : <type> = <code>");
+            System.out.println("This command will evaluate a line of <type> code.");
+            System.out.println("<type> can be replaced with hscript, or any supported dialect.");
+
 
 
 
@@ -114,12 +116,50 @@ public class Terminal {
 
         if (cmd3.equals("horse dist")) {
 
-            Files.copy(new File(ROM.workingDirectory + "/Terminal/InterpreterTerminal.jar").toPath(),new File(ROM.directory + "/InterpreterTerminal.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
-            Runtime.getRuntime().exec("java -jar InterpreterTerminal.jar dist/index.hscript", null, new File(ROM.directory));
+            Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/InterpreterTerminal.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
+            Runtime.getRuntime().exec("java -jar Interpreter.jar 5 dist/index.hscript", null, new File(ROM.directory));
 
 
         }
 
+
+    }
+
+
+    public static void evaluator (String command) throws Exception {
+
+        String toEval;
+        String clean = command.replaceFirst("eval ", "");
+
+        if (!clean.startsWith(": ")) {
+            System.out.println("Bad syntax");
+            System.out.println("Eval command: eval : <type> = <code>");
+        } else {
+            clean = clean.replaceFirst(": ", "");
+        }
+
+        Scanner scanner = new Scanner(clean);
+        String type = scanner.next();
+
+        String code = clean.replaceFirst(type + " = ", "");
+
+
+        if (type.equals("hscript")) {
+            toEval = code.replaceAll("\\\"", "\\\\\"");
+        } else {
+            System.out.println(type + "is not a supported dialect of HorseScript.");
+            System.out.println("Supported dialects: hscript");
+            System.out.print("If you want to add this dialect, please see us on GitHub: ");
+            System.out.println("https://github.com/HorseScript/HorseScript");
+            return;
+        }
+
+
+        Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/InterpreterTerminal.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+        Process p = Runtime.getRuntime().exec("java -jar Interpreter.jar 6 " + toEval, null, new File(ROM.directory));
+
+        p.waitFor();
 
     }
 

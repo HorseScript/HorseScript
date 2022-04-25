@@ -8,6 +8,8 @@
     <method v="2">
       <option name="BuildArtifacts" enabled="true">
         <artifact name="Interpreter Main" />
+        <artifact name="Interpreter Main, export to Terminal" />
+        <artifact name="Terminal Main" />
       </option>
     </method>
   </configuration>

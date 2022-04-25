@@ -6,6 +6,8 @@
 package horse
 
 import resources.HorseError
+import javax.swing.JFrame
+import javax.swing.JLabel
 
 object horse {
 // Development: In development, though `horse print` works.
@@ -20,6 +22,8 @@ object horse {
 
         if (line2.startsWith("print")) {
             horse.print(line.replaceFirst("horse ", ""))
+        } else if (line2.startsWith("frame")) {
+            horse.frame(line.replaceFirst("horse ", ""))
         } else if (line.equals("horse")) {
             println("HorseScript Horse Library | Version: $version")
         } else if (line2.startsWith("help")) {
@@ -48,8 +52,21 @@ object horse {
 
         println(output)
 
+    }
+
+    @JvmStatic fun frame (line: String) {
 
 
+        val f : JFrame = JFrame("HorseScript")
+        f.setSize(400, 400)
+        f.defaultCloseOperation = JFrame.DISPOSE_ON_CLOSE
+
+        val e : JLabel = JLabel("HorseScript Popup")
+        e.setSize(200, 200)
+        f.add(e)
+
+        f.pack()
+        f.isVisible = true
     }
 
 }
