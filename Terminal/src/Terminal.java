@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 import java.util.UUID;
+import java.util.jar.JarFile;
 
 public class Terminal {
 
@@ -67,6 +68,18 @@ public class Terminal {
 
         } else if (input.startsWith("eval ")) {
             evaluator(input);
+
+
+        } else if (input.replace(" ", "").equals("console")) {
+            System.out.println("Console command: console : <type>");
+            System.out.println("This command will open a <type> console.");
+            System.out.println("<type> can be replaced with hscript, or any supported console.");
+
+
+
+
+        } else if (input.startsWith("console ")) {
+            console(input);
 
 
         } else if (input.startsWith("help")) {
@@ -164,5 +177,45 @@ public class Terminal {
         p.waitFor();
 
     }
+
+
+    public static void console (String command) throws Exception {
+
+        String toEval;
+        String clean = command.replaceFirst("console ", "");
+
+        if (!clean.startsWith(": ")) {
+            System.out.println("Bad syntax");
+            System.out.println("Console command: console : <type>");
+        } else {
+            clean = clean.replaceFirst(": ", "");
+        }
+
+        Scanner scanner = new Scanner(clean);
+        String type = scanner.next();
+
+
+
+        if (type.equals("hscript")) {
+            // this is good.
+        } else {
+            System.out.println(type + " is not a supported console of HorseScript.");
+            System.out.println("Supported consoles: hscript");
+            System.out.print("If you want to add this console, please see us on GitHub: ");
+            System.out.println("https://github.com/HorseScript/HorseScript");
+            return;
+        }
+
+
+        Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/InterpreterTerminal.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+        Process p = Runtime.getRuntime().exec("java -jar Interpreter.jar 3", null, new File(ROM.directory));
+
+        p.waitFor();
+
+    }
+
+
+
 
 }

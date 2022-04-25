@@ -57,6 +57,8 @@ public class Main {
                     ROM.launcher();
                 }
 
+            } else {
+               RAM.useROM = (byte) Integer.parseInt(action);
             }
 
 
