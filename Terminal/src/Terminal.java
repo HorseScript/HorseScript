@@ -141,7 +141,7 @@ public class Terminal {
     }
 
 
-    public static void evaluator (String command) throws Exception {
+    public static void evaluator (@NotNull String command) throws Exception {
 
         String toEval;
         String clean = command.replaceFirst("eval ", "");
@@ -179,7 +179,7 @@ public class Terminal {
     }
 
 
-    public static void console (String command) throws Exception {
+    public static void console (@NotNull String command) throws Exception {
 
         String toEval;
         String clean = command.replaceFirst("console ", "");
