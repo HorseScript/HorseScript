@@ -5,7 +5,10 @@
 
 package horse
 
+import resources.Constant
 import resources.HorseError
+import resources.SearchTypes
+import resources.Variable
 import javax.swing.JFrame
 import javax.swing.JLabel
 
@@ -37,7 +40,7 @@ object horse {
 
     @JvmStatic fun print (line: String) {
 
-        if (line == "print" || line == "print " || (!line.contains("\""))) {
+        if (line == "print" || line == "print ") {
             throw IllegalArgumentException(ROM.yellow + "Print requires a String. Usage: " + ROM.cyan + "horse print \"String\"" + ROM.white)
         }
 
@@ -45,7 +48,24 @@ object horse {
         val line_1 : String = line.replaceFirst("print ", "")
 
         if (!line_1.startsWith("\"") || !line_1.endsWith("\"")) {
-            throw IllegalArgumentException(ROM.yellow + "Print requires a String. Usage: " + ROM.cyan + "horse print \"String\"" + ROM.white)
+
+            val variableToFind = RAM.getVar(line_1, SearchTypes.EQUALS_NAME);
+
+            if (variableToFind.javaClass == Variable::class.java) {
+
+                println((variableToFind as Variable).content)
+
+            } else if (variableToFind.javaClass == Constant::class.java) {
+
+                println((variableToFind as Constant).content)
+
+            } else {
+
+
+                throw IllegalArgumentException(ROM.yellow + "Print requires a String or variable. Usage: " + ROM.cyan + "horse print \"String\"" + ROM.white)
+
+            }
+
         }
 
         val output : String = line_1.replace("\"", "");

@@ -4,12 +4,25 @@ A simple, fast, and powerful programming language, written completely and powere
 <br>
 
 
+### Line separation in HorseScript
+The line separation is `;;`.
+
+Example:
+```horsescript
+horse print "horsescript is goated";;
+~ A comment ;;
+horse frame;;
+horse exit;;
+```
+<br>
+
+
 ### Print line to console in HorseScript
 You'll use `horse print "<text>"`.
 
 Example:
 ```horsescript
-horse print "horsescript is goated"
+horse print "horsescript is goated";;
 ```
 <br>
 
@@ -18,7 +31,7 @@ You'll use `horse frame`.
 
 Example:
 ```horsescript
-horse frame
+horse frame;;
 ```
 <br>
 
@@ -29,7 +42,7 @@ Single line comments start with a `~`.
 Example:
 ```horsescript
 ~ This is a comment
-~This is also a comment
+~This is also a comment ;;
 ```
 <br>
 
@@ -43,7 +56,7 @@ Example:
 ```horsescript
 ~* Start multi line comment
    This is Still comment text
-End multi line comment *~ 
+End multi line comment *~ ;;
 ```
 <br>
 

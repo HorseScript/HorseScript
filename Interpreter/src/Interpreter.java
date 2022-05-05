@@ -22,15 +22,16 @@ public class Interpreter {
 
 
 
-        String[] lines2 = code.split("\\n");
+        String[] lines2 = code.split(";;");
         ArrayList<String> lines = new ArrayList<>(Arrays.asList(lines2));
 
 
         for (String line : lines) {
 
-            line = line.replace("\n", "");
+            line = line.replace(";;", "");
 
             String output;
+
 
             if (line.equals("")) {
                 // Newline
@@ -41,6 +42,16 @@ public class Interpreter {
                 // Comment
                 continue;
             }
+
+
+            if (line.contains("~")) {
+
+                //
+
+
+            }
+
+
 
             if (line.toLowerCase().startsWith("exit")) {
                 exit._main(line);
