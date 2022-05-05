@@ -72,5 +72,26 @@ public final class ROM {
 
     // RAM VARIABLES
     // ------------------------------------------------------------
+    // FUNCTIONS
+
+
+    public static final Boolean requireDir () {
+
+
+        if (directory.isEmpty()) {
+            System.out.println(red + "Error: " + white + "No directory specified. This command requires a directory.");
+            return Boolean.FALSE;
+        } else {
+            return Boolean.TRUE;
+        }
+
+    }
+
+
+
+
+
+    // FUNCTIONS
+    // ------------------------------------------------------------
 
 }

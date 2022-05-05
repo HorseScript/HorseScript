@@ -11,7 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 import java.util.UUID;
-import java.util.jar.JarFile;
+
 
 public class Terminal {
 
@@ -130,6 +130,8 @@ public class Terminal {
         String cmd3 = cmd2.replaceAll(" ", "").replaceAll(uuid, " ");
 
         if (cmd3.equals("horse dist")) {
+
+            if (!ROM.requireDir()) return;
 
             Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/Interpreter.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
             Runtime.getRuntime().exec("java -jar Interpreter.jar 5 dist/index.hscript", null, new File(ROM.directory));
