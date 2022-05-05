@@ -131,7 +131,7 @@ public class Terminal {
 
         if (cmd3.equals("horse dist")) {
 
-            Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/InterpreterTerminal.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/Interpreter.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
             Runtime.getRuntime().exec("java -jar Interpreter.jar 5 dist/index.hscript", null, new File(ROM.directory));
 
 
@@ -170,7 +170,7 @@ public class Terminal {
         }
 
 
-        Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/InterpreterTerminal.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/Interpreter.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
 
         Process p = Runtime.getRuntime().exec("java -jar Interpreter.jar 6 " + toEval, null, new File(ROM.directory));
 

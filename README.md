@@ -3,6 +3,26 @@ A simple, fast, and powerful programming language, written completely and powere
 
 <br>
 
+
+### Print line to console in HorseScript
+You'll use `horse print "<text>"`.
+
+Example:
+```horsescript
+horse print "horsescript is goated"
+```
+<br>
+
+### GUI frame in HorseScript
+You'll use `horse frame`.
+
+Example:
+```horsescript
+horse frame
+```
+<br>
+
+
 ### Single line Comments in HorseScript
 Single line comments start with a `~`.
 
