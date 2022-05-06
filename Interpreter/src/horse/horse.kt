@@ -41,7 +41,7 @@ object horse {
     @JvmStatic fun print (line: String) {
 
         if (line == "print" || line == "print ") {
-            throw IllegalArgumentException(ROM.yellow + "Print requires a String. Usage: " + ROM.cyan + "horse print \"String\"" + ROM.white)
+            throw IllegalArgumentException(c.yellow + "Print requires a String. Usage: " + c.cyan + "horse print \"String\"" + c.white)
         }
 
 
@@ -62,7 +62,7 @@ object horse {
             } else {
 
 
-                throw IllegalArgumentException(ROM.yellow + "Print requires a String or variable. Usage: " + ROM.cyan + "horse print \"String\"" + ROM.white)
+                throw IllegalArgumentException(c.yellow + "Print requires a String or variable. Usage: " + c.cyan + "horse print \"String\"" + c.white)
 
             }
 

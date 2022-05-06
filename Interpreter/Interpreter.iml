@@ -18,5 +18,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="Terminal" />
+    <orderEntry type="library" name="ColorCodes" level="project" />
   </component>
 </module>

@@ -35,7 +35,7 @@ object debug {
     @JvmStatic fun enabled (line: String) {
 
         if (line == "enabled" || line == "enabled ") {
-            throw IllegalArgumentException(ROM.yellow + "Enabled requires a Boolean. Usage: " + ROM.cyan + "debug enabled true" + ROM.white)
+            throw IllegalArgumentException(c.yellow + "Enabled requires a Boolean. Usage: " + c.cyan + "debug enabled true" + c.white)
         }
 
 

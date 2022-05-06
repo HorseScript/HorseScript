@@ -64,7 +64,7 @@ public class Main {
 
 
         } catch (ArrayIndexOutOfBoundsException exception) {
-            System.out.println(ROM.gray + "No command line args specified, defaulting to HorseScript Launcher.");
+            System.out.println(c.gray + "No command line args specified, defaulting to HorseScript Launcher.");
             ROM.launcher();
         }
 

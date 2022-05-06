@@ -12,7 +12,7 @@ public class Console {
 
     public static void main(String[] args) throws Exception {
 
-        System.out.println(ROM.yellow + "HorseScript Console" + ROM.white);
+        System.out.println(c.yellow + "HorseScript Console" + c.white);
 
 
         while (true) {

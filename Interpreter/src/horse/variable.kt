@@ -107,12 +107,12 @@ object variable {
         val varname : String = parts[1].split(" ")[0]
 
         val var1 : Variable = Variable(varname, parts2[1], typ)
-        println(ROM.green + "Package: " + ROM.cyan + var1.toString())
+        println(c.green + "Package: " + c.cyan + var1.toString())
 
         RAM.addVar(var1)
 
 
-        println(ROM.green + "Created variable " + ROM.cyan + var1.name + ROM.green + " with value " + ROM.cyan + var1.content)
+        println(c.green + "Created variable " + c.cyan + var1.name + c.green + " with value " + c.cyan + var1.content)
 
     }
 
