@@ -5,6 +5,8 @@
 
 package horse
 
+import c.c;
+
 object debug {
 
     const val version : String = "0.0.1"

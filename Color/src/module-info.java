@@ -2,6 +2,6 @@
 module Color {
 
 
-
+    exports c;
 
 }

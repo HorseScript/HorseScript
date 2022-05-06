@@ -7,6 +7,7 @@ package horse
 
 import resources.Variable
 import resources.VariableTyping
+import c.c
 
 
 object variable {

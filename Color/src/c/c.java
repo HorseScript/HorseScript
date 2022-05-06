@@ -4,6 +4,9 @@
  */
 
 
+package c;
+
+
 import java.util.Random;
 
 /**
@@ -114,7 +117,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    private c () {}
+    private c() {}
 
 
     /** <p>Return a random color code.</p>

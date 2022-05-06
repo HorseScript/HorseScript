@@ -11,6 +11,7 @@ import resources.SearchTypes
 import resources.Variable
 import javax.swing.JFrame
 import javax.swing.JLabel
+import c.c;
 
 object horse {
 // Development: In development, though `horse print` works.

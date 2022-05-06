@@ -4,6 +4,7 @@
  */
 
 import java.util.Scanner;
+import c.c;
 
 public class Console {
 
