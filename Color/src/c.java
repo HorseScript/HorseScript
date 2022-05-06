@@ -5,6 +5,8 @@
 
 import org.jetbrains.annotations.Contract;
 
+import java.util.Random;
+
 /**
  * <p>ANSI Color codes for HorseScript.</p>
  * <p>The default color code is white.</p>
@@ -115,6 +117,34 @@ public final class c {
      * */
     @Contract(pure = true)
     private c () {}
+
+
+    /** <p>Return a random color code.</p>
+     *
+     * <br><br>
+     * @since 0.0.1
+     * @author HorseScript
+     * */
+    public static String random () {
+
+        String[] colors = {white, black, red, green, yellow, blue, purple, cyan, gray};
+
+        return colors[new Random().nextInt(colors.length)];
+    }
+
+
+    /** <p>Return a random bright and colorful color code.</p>
+     *
+     * <br><br>
+     * @since 0.0.1
+     * @author HorseScript
+     * */
+    public static String randomHigh () {
+
+        String[] colors = {red, green, yellow, blue, purple, cyan};
+
+        return colors[new Random().nextInt(colors.length)];
+    }
 
 
 
