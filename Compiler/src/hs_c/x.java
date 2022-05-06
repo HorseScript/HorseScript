@@ -12,8 +12,6 @@ import hs_c.configfile.type;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -26,8 +24,17 @@ public final @NotNull class x {
     }
 
 
-    // @SuppressWarnings("all")
-    public static final @NotNull Options convert (HorseScript hs, compilerOptions opt) {
+    /** <p>Convert the HorseScript config object to an Options object.</p>
+     *
+     * <br><br>
+     * @return An Options object.
+     * @since 0.0.1
+     * @author HorseScript
+     * */
+    @SuppressWarnings("all")
+    public static final @NotNull Options convert (@NotNull HorseScript hs) {
+
+        compilerOptions opt = hs.options;
 
 
         // begin srcDir
@@ -86,24 +93,66 @@ public final @NotNull class x {
 
 
         // begin task
+        type task;
         try {
-            type task = type.getType(opt.type);
+            task = type.getType(opt.type.toLowerCase());
         } catch (Exception e) {
-            type task = type.error;
+            task = type.error;
             log("Error: " + e.getMessage());
+            throw e;
         }
         // end task
 
 
 
+        // begin outDir
+        File outDir = new File(System.getProperty("user.dir") + opt.out);
+
+        if (!outDir.isDirectory()) {
+            throw new IllegalStateException("outDir is not a directory");
+        }
+
+        if (!outDir.exists()) {
+
+            Boolean success;
+
+
+            try {
+                success = outDir.mkdirs();
+            } catch (Exception e) {
+                throw e;
+            }
+
+
+            if (success) {
+                log("outDir created");
+            } else {
+                log("outDir not created");
+            }
+        } else {
+            log("outDir exists");
+        }
+        // end outDir
 
 
 
+        // begin runTests
+        Boolean runTests = opt.test;
+        // end runTests
 
 
+        // begin noComments
+        Boolean noComments = opt.removeComments;
+        // end noComments
 
 
-        Options output = null;
+        // begin noEmptyLines
+        Boolean noEmptyLines = opt.removeLines;
+        // end noEmptyLines
+
+
+        @SuppressWarnings("redundant")
+        Options output = new Options(srcDir, excludedFiles, task, outDir, runTests, noComments, noEmptyLines);
 
 
 

@@ -3,7 +3,6 @@
  * All rights reserved.
  */
 
-import org.jetbrains.annotations.Contract;
 
 import java.util.Random;
 
@@ -115,7 +114,6 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    @Contract(pure = true)
     private c () {}
 
 
