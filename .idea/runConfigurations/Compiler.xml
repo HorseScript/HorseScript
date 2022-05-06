@@ -1,13 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Commit &amp; Push     | bat" type="BatchConfigurationType" factoryName="Batch">
-    <option name="INTERPRETER_OPTIONS" value="" />
+  <configuration default="false" name="Compiler" type="JarApplication">
+    <option name="JAR_PATH" value="$PROJECT_DIR$/build/Compiler.jar" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    <option name="PARENT_ENVS" value="true" />
-    <module name="" />
-    <option name="SCRIPT_NAME" value="./Utility/Windows/push.bat" />
-    <option name="PARAMETERS" value="" />
+    <option name="ALTERNATIVE_JRE_PATH" />
     <method v="2">
-      <option name="Make" enabled="true" />
       <option name="BuildArtifacts" enabled="true">
         <artifact name="Color Codes" />
         <artifact name="Compiler Main" />

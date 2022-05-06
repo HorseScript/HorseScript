@@ -7,6 +7,8 @@
     <module name="Interpreter" />
     <method v="2">
       <option name="BuildArtifacts" enabled="true">
+        <artifact name="Color Codes" />
+        <artifact name="Compiler Main" />
         <artifact name="Interpreter Main" />
         <artifact name="Interpreter Main, export to Terminal" />
         <artifact name="Terminal Main" />

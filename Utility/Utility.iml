@@ -9,7 +9,7 @@
     </content>
     <orderEntry type="jdk" jdkName="openjdk-17" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="ColorCodes" level="project" />
-    <orderEntry type="library" name="ColorCodes" level="project" />
+    <orderEntry type="library" name="Color Codes: ColorCodes.jar" level="project" />
+    <orderEntry type="library" name="Color Codes: ColorCodes.jar" level="project" />
   </component>
 </module>

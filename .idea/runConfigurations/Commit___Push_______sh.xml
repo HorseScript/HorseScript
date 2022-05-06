@@ -12,6 +12,14 @@
     <option name="EXECUTE_IN_TERMINAL" value="false" />
     <option name="EXECUTE_SCRIPT_FILE" value="true" />
     <envs />
-    <method v="2" />
+    <method v="2">
+      <option name="BuildArtifacts" enabled="true">
+        <artifact name="Color Codes" />
+        <artifact name="Compiler Main" />
+        <artifact name="Interpreter Main" />
+        <artifact name="Interpreter Main, export to Terminal" />
+        <artifact name="Terminal Main" />
+      </option>
+    </method>
   </configuration>
 </component>
