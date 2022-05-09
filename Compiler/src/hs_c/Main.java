@@ -6,11 +6,19 @@
 package hs_c;
 
 
+import hs_c.config.Options;
+import hs_c.configfile.HorseScript;
+import hs_c.configfile.ParseConfig;
+
 public class Main {
 
     public static void main (String[] args) throws Exception {
 
-        // ParseConfig.takeJson();
+        HorseScript toConvert = ParseConfig.takeJson();
+
+        Options OPTIONS = x.convert(toConvert);
+
+        // then we compile!
 
 
 

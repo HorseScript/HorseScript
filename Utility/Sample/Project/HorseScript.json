@@ -1,0 +1,14 @@
+{
+  "src": "./src/", /* Source directory to pull files from */
+  "exclude": [""], /* Excluded files from the build */
+
+  "compilerOptions": { /* HorseScript Compiler options */
+
+    "type": "minify",             /* Compiler job */
+    "out": "./dist/",             /* Output directory */
+    "test": true,                 /* Run tests */
+    "removeComments": true,       /* Remove comments */
+    "removeLines": true,          /* Remove empty lines */
+
+  },
+}

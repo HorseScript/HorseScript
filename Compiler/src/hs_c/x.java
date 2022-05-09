@@ -108,9 +108,6 @@ public final @NotNull class x {
         // begin outDir
         File outDir = new File(System.getProperty("user.dir") + opt.out);
 
-        if (!outDir.isDirectory()) {
-            throw new IllegalStateException("outDir is not a directory");
-        }
 
         if (!outDir.exists()) {
 
