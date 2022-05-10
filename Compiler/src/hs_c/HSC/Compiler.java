@@ -111,12 +111,15 @@ public class Compiler {
 
 
             // Remove empty lines
-            if (line.replaceAll(" ", "").replaceAll("\t", "").replaceAll("\n", "").replaceAll("\\n", "").equals("")) {
+            final String s = line.replaceAll(" ", "").replaceAll("\t", "").replaceAll("\n", "");
+
+
+            if (s.replaceAll("\\n", "").equals("")) {
                 continue;
             }
 
             // Remove comments
-            if (line.replaceAll(" ", "").replaceAll("\t", "").replaceAll("\n", "").replaceAll("\\n", "").startsWith("~")) {
+            if (s.replaceAll("\\n", "").startsWith("~")) {
                 continue;
             }
 
