@@ -3,4 +3,4 @@
  * All rights reserved.
  */
 
-package hs_c.config;
+package Compiler.configfile;

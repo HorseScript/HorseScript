@@ -12,6 +12,6 @@ module Compiler {
     requires org.jetbrains.annotations;
     requires com.google.gson;
 
-    exports hs_c;
+    exports Compiler;
 
 }

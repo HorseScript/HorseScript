@@ -3,9 +3,7 @@
  * All rights reserved.
  */
 
-package hs_c.configfile;
-
-import static org.junit.jupiter.api.Assertions.*;
+package Compiler.configfile;
 
 class HorseScriptTest {
 

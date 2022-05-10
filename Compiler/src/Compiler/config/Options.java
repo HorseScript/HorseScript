@@ -3,11 +3,10 @@
  *  All rights reserved.
  */
 
-package hs_c.config;
+package Compiler.config;
 
 import com.google.gson.JsonObject;
-import com.google.gson.stream.JsonWriter;
-import hs_c.configfile.type;
+import Compiler.configfile.type;
 import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.util.Arrays;

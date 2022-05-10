@@ -3,11 +3,9 @@
  * All rights reserved.
  */
 
-package hs_c.configfile;
+package Compiler.configfile;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class typeTest {
 

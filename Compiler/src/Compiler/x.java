@@ -3,12 +3,12 @@
  *  All rights reserved.
  */
 
-package hs_c;
+package Compiler;
 
-import hs_c.config.Options;
-import hs_c.configfile.HorseScript;
-import hs_c.configfile.compilerOptions;
-import hs_c.configfile.type;
+import Compiler.config.Options;
+import Compiler.configfile.HorseScript;
+import Compiler.configfile.compilerOptions;
+import Compiler.configfile.type;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;

@@ -3,10 +3,10 @@
  * All rights reserved.
  */
 
-package hs_c.HSC;
+package Compiler.HSC;
 
-import hs_c.config.Options;
-import hs_c.x;
+import Compiler.config.Options;
+import Compiler.x;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;

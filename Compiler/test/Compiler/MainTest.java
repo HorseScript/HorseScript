@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package hs_c;
+package Compiler;
 
 import org.junit.jupiter.api.Test;
 

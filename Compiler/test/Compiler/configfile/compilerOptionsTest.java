@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-package hs_c.configfile;
+package Compiler.configfile;
 
 
 class compilerOptionsTest {

@@ -3,13 +3,13 @@
  *  All rights reserved.
  */
 
-package hs_c;
+package Compiler;
 
 
-import hs_c.HSC.Compiler;
-import hs_c.config.Options;
-import hs_c.configfile.HorseScript;
-import hs_c.configfile.ParseConfig;
+import Compiler.HSC.Compiler;
+import Compiler.config.Options;
+import Compiler.configfile.HorseScript;
+import Compiler.configfile.ParseConfig;
 
 public class Main {
 

@@ -3,11 +3,9 @@
  * All rights reserved.
  */
 
-package hs_c.HSC;
+package Compiler.HSC;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CompilerTest {
 
