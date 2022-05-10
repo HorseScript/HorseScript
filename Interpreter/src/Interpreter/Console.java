@@ -3,9 +3,11 @@
  * All rights reserved.
  */
 
-package Interpreter;import java.util.Scanner;
+package Interpreter;
 
 import Color.c;
+
+import java.util.Scanner;
 
 public class Console {
 

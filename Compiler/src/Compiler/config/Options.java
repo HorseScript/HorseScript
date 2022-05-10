@@ -5,9 +5,10 @@
 
 package Compiler.config;
 
-import com.google.gson.JsonObject;
 import Compiler.configfile.type;
+import com.google.gson.JsonObject;
 import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.util.Arrays;
 

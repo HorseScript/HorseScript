@@ -5,13 +5,14 @@
 
 package Interpreter;
 
+import Color.c;
 import Interpreter.resources.HorseError;
+
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 import java.util.zip.DataFormatException;
-import Color.c;
 
 public class Main {
 

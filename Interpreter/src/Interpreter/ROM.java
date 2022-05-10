@@ -3,9 +3,12 @@
  * All rights reserved.
  */
 
-package Interpreter;import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Unmodifiable;
+package Interpreter;
+
 import Color.c;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Unmodifiable;
+
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;

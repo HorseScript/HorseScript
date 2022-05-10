@@ -5,10 +5,10 @@
 
 package Interpreter.horse
 
+import Color.c
 import Interpreter.RAM
 import Interpreter.resources.Variable
 import Interpreter.resources.VariableTyping
-import Color.c
 
 
 object variable {

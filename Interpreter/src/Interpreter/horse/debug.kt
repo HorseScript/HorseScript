@@ -5,8 +5,8 @@
 
 package Interpreter.horse
 
+import Color.c
 import Interpreter.RAM
-import Color.c;
 
 object debug {
 

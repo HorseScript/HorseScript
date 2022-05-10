@@ -3,10 +3,10 @@
  * All rights reserved.
  */
 
-package Terminal;import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Unmodifiable;
+package Terminal;
 
-import java.io.FileReader;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Unmodifiable;
 
 public final class ROM {
 

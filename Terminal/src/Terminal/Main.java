@@ -3,7 +3,9 @@
  * All rights reserved.
  */
 
-package Terminal;public class Main {
+package Terminal;
+
+public class Main {
 
     public static void main (String[] args) throws Exception {
 

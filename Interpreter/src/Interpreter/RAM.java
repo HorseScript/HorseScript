@@ -3,11 +3,13 @@
  * All rights reserved.
  */
 
-package Interpreter;import org.jetbrains.annotations.NotNull;
+package Interpreter;
+
 import Interpreter.resources.Constant;
 import Interpreter.resources.Result;
 import Interpreter.resources.SearchTypes;
 import Interpreter.resources.Variable;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.ArrayList;

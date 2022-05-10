@@ -3,8 +3,8 @@
  * All rights reserved.
  */
 
-import org.junit.jupiter.api.Test;
 import Color.c;
+import org.junit.jupiter.api.Test;
 
 class cTest {
 

@@ -5,6 +5,7 @@
 
 package Interpreter.horse
 
+import Color.c
 import Interpreter.RAM
 import Interpreter.resources.Constant
 import Interpreter.resources.HorseError
@@ -12,7 +13,6 @@ import Interpreter.resources.SearchTypes
 import Interpreter.resources.Variable
 import javax.swing.JFrame
 import javax.swing.JLabel
-import Color.c;
 
 object horse {
 // Development: In development, though `horse print` works.
