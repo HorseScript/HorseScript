@@ -4,5 +4,8 @@
  */
 
 module Terminal {
+
     requires org.jetbrains.annotations;
+
+    exports Terminal;
 }

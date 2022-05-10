@@ -11,10 +11,10 @@ module Interpreter {
     requires java.desktop;
     requires Color;
     requires org.jetbrains.annotations;
+    requires Terminal;
 
 
-    exports horse;
-    exports resources;
+    exports Interpreter;
     
 
 }

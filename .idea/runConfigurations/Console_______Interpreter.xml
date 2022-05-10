@@ -2,7 +2,7 @@
   <configuration default="false" name="Console     | Interpreter" type="Application" factoryName="Application" folderName="Interpreter">
     <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-    <option name="MAIN_CLASS_NAME" value="Console" />
+    <option name="MAIN_CLASS_NAME" value="Interpreter.Console" />
     <module name="Interpreter" />
     <method v="2">
       <option name="Make" enabled="true" />

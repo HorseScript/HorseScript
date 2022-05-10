@@ -6,6 +6,8 @@
 package Terminal;import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
+import java.io.FileReader;
+
 public final class ROM {
 
     // ROM SETTINGS
@@ -85,6 +87,18 @@ public final class ROM {
             return Boolean.TRUE;
         }
 
+    }
+
+
+    public static final @NotNull String VERSION () {
+
+        /* try {
+            FileReader reader = new FileReader(".version");
+        } catch (Exception e) {
+            return "Error getting version.";
+        } */
+
+        return "0.0.1";
     }
 
 
