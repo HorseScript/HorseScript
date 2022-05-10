@@ -5,8 +5,8 @@
 
 package hs_c.configfile;
 
-import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
+
 import java.io.File;
 import java.io.StringReader;
 import java.text.ParseException;
