@@ -6,7 +6,7 @@
 package Interpreter.horse
 
 import Interpreter.RAM
-import c.c;
+import Color.c;
 
 object debug {
 

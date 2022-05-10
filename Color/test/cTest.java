@@ -4,7 +4,7 @@
  */
 
 import org.junit.jupiter.api.Test;
-import c.c;
+import Color.c;
 
 class cTest {
 

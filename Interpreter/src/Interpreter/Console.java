@@ -5,7 +5,7 @@
 
 package Interpreter;import java.util.Scanner;
 
-import c.c;
+import Color.c;
 
 public class Console {
 

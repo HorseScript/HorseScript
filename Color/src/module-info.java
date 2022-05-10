@@ -8,6 +8,6 @@
 module Color {
 
 
-    exports c;
+    exports Color;
 
 }

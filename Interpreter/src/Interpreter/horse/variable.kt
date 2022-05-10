@@ -8,7 +8,7 @@ package Interpreter.horse
 import Interpreter.RAM
 import Interpreter.resources.Variable
 import Interpreter.resources.VariableTyping
-import c.c
+import Color.c
 
 
 object variable {

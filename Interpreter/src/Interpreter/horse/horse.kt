@@ -12,7 +12,7 @@ import Interpreter.resources.SearchTypes
 import Interpreter.resources.Variable
 import javax.swing.JFrame
 import javax.swing.JLabel
-import c.c;
+import Color.c;
 
 object horse {
 // Development: In development, though `horse print` works.
