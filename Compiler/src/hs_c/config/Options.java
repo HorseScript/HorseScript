@@ -5,9 +5,12 @@
 
 package hs_c.config;
 
+import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonWriter;
 import hs_c.configfile.type;
 import org.jetbrains.annotations.NotNull;
 import java.io.File;
+import java.util.Arrays;
 
 
 /** Settings that HS-C will use to compile the HorseScript code */
@@ -59,4 +62,23 @@ public class Options {
         this.noComments = noComments;
         this.noEmptyLines = noEmptyLines;
     }
+
+    @Override public @NotNull String toString () {
+
+        JsonObject json = new JsonObject();
+        json.addProperty("srcDir", srcDir.getAbsolutePath());
+        json.addProperty("excludedFiles", Arrays.toString(excludedFiles));
+        json.addProperty("task", task.toString());
+        json.addProperty("outDir", outDir.getAbsolutePath());
+        json.addProperty("runTests", runTests);
+        json.addProperty("noComments", noComments);
+        json.addProperty("noEmptyLines", noEmptyLines);
+
+
+
+
+        return json.toString();
+    }
+
+
 }

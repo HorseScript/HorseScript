@@ -6,6 +6,7 @@
 package hs_c;
 
 
+import hs_c.HSC.Compiler;
 import hs_c.config.Options;
 import hs_c.configfile.HorseScript;
 import hs_c.configfile.ParseConfig;
@@ -18,9 +19,11 @@ public class Main {
 
         Options OPTIONS = x.convert(toConvert);
 
+        System.out.println(OPTIONS);
+
         // then we compile!
 
-
+        Compiler.Compile(OPTIONS);
 
 
     }

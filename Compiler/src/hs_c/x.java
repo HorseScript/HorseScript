@@ -106,7 +106,7 @@ public final @NotNull class x {
 
 
         // begin outDir
-        File outDir = new File(System.getProperty("user.dir") + opt.out);
+        File outDir = new File(System.getProperty("user.dir") + opt.out.replaceFirst("\\.", ""));
 
 
         if (!outDir.exists()) {
