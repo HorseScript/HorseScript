@@ -1,3 +1,4 @@
+horse print aString;;
 horse print "Hello, world!";;
 horse print "Hello, horse!";;
 
