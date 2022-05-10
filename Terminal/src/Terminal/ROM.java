@@ -3,7 +3,7 @@
  * All rights reserved.
  */
 
-import org.jetbrains.annotations.NotNull;
+package Terminal;import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Unmodifiable;
 
 public final class ROM {

@@ -51,7 +51,7 @@ public final class ROM {
     public final static void launcher () {
 
         Scanner scanner1 = new Scanner(System.in);
-        System.out.println(c.green + "HorseScript Launcher | HorseScript Version " + ROM.VERSION);
+        System.out.println(c.green + "HorseScript Launcher | HorseScript Version " + Terminal.ROM.VERSION);
         System.out.println(c.blue + "\nHorseScript Utilities");
         System.out.println(c.yellow + "0 - Interpret Line From Scanner");
         System.out.println("1 - Interpret Line from ROM String");
