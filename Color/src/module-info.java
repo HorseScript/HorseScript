@@ -6,6 +6,7 @@
 
 /** Color codes for HorseScript */
 module Color {
+    requires org.jetbrains.annotations;
 
 
     exports Color;

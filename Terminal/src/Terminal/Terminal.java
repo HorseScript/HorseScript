@@ -186,7 +186,7 @@ public class Terminal {
     public static void console (@NotNull String command) throws Exception {
 
         String toEval;
-        String clean = command.replaceFirst("conssole ", "");
+        String clean = command.replaceFirst("console ", "");
 
         if (!clean.startsWith(": ")) {
             System.out.println("Bad syntax");

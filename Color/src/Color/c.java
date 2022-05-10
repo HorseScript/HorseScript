@@ -7,6 +7,9 @@
 package Color;
 
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Unmodifiable;
+
 import java.util.Random;
 
 /**
@@ -17,7 +20,7 @@ import java.util.Random;
  * @since 0.0.1
  * @author HorseScript
  * */
-public final class c {
+public final @NotNull @Unmodifiable class c {
 
 
     /** <p>Set color to <b>White</b>.</p>
@@ -27,7 +30,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static final String white = "\u001B[0m";
+    public static final @NotNull @Unmodifiable String white = "\u001B[0m";
 
 
     /** <p>Set color to <b>Black</b>.</p>
@@ -36,7 +39,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static final String black = "\u001B[30m";
+    public static final @NotNull @Unmodifiable String black = "\u001B[30m";
 
 
     /** <p>Set color to <b>Red</b>.</p>
@@ -45,7 +48,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static final String red = "\u001B[31m";
+    public static final @NotNull @Unmodifiable String red = "\u001B[31m";
 
 
     /** <p>Set color to <b>Green</b>.</p>
@@ -54,7 +57,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static final String green = "\u001B[32m";
+    public static final @NotNull @Unmodifiable String green = "\u001B[32m";
 
 
     /** <p>Set color to <b>Yellow</b>.</p>
@@ -63,7 +66,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static final String yellow = "\u001B[33m";
+    public static final @NotNull @Unmodifiable String yellow = "\u001B[33m";
 
 
     /** <p>Set color to <b>Blue</b>.</p>
@@ -72,7 +75,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static final String blue = "\u001B[34m";
+    public static final @NotNull @Unmodifiable String blue = "\u001B[34m";
 
 
     /** <p>Set color to <b>Purple</b>.</p>
@@ -81,7 +84,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static final String purple = "\u001B[35m";
+    public static final @NotNull @Unmodifiable String purple = "\u001B[35m";
 
 
     /** <p>Set color to <b>Cyan</b>.</p>
@@ -90,7 +93,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static final String cyan = "\u001B[36m";
+    public static final @NotNull @Unmodifiable String cyan = "\u001B[36m";
 
 
     /** <p>Set color to <b>Gray</b>.</p>
@@ -99,7 +102,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static final String gray = "\u001B[37m";
+    public static final @NotNull @Unmodifiable String gray = "\u001B[37m";
 
 
 
@@ -117,7 +120,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    private c() {}
+    private @NotNull @Unmodifiable c () {}
 
 
     /** <p>Return a random color code.</p>
@@ -126,7 +129,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static String random () {
+    public static @NotNull @Unmodifiable String random () {
 
         String[] colors = {white, black, red, green, yellow, blue, purple, cyan, gray};
 
@@ -140,7 +143,7 @@ public final class c {
      * @since 0.0.1
      * @author HorseScript
      * */
-    public static String randomHigh () {
+    public static @NotNull @Unmodifiable String randomHigh () {
 
         String[] colors = {red, green, yellow, blue, purple, cyan};
 
