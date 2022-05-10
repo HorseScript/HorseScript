@@ -28,6 +28,9 @@ public class Main {
 
     }
 
+    /** Utility class <b>Main</b> cannot be initialized. */
+    private Main () {}
+
 
 
 
