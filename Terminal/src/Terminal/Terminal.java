@@ -3,8 +3,9 @@
  * All rights reserved.
  */
 
-package Terminal;import org.jetbrains.annotations.NotNull;
+package Terminal;
 
+import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -184,7 +185,7 @@ public class Terminal {
     public static void console (@NotNull String command) throws Exception {
 
         String toEval;
-        String clean = command.replaceFirst("console ", "");
+        String clean = command.replaceFirst("conssole ", "");
 
         if (!clean.startsWith(": ")) {
             System.out.println("Bad syntax");
@@ -199,21 +200,23 @@ public class Terminal {
 
 
         if (type.equals("hscript")) {
-            // this is good.
+
+
+            Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/Interpreter.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+            Process p = Runtime.getRuntime().exec("java -jar Interpreter.jar 3", null, new File(ROM.directory));
+            p.waitFor();
+
+
         } else {
             System.out.println(type + " is not a supported console of HorseScript.");
             System.out.println("Supported consoles: hscript");
-            System.out.print("If you want to add this console, please see us on GitHub: ");
             System.out.println("https://github.com/HorseScript/HorseScript");
             return;
         }
 
 
-        Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/Interpreter.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
 
-        Process p = Runtime.getRuntime().exec("java -jar Interpreter.jar 3", null, new File(ROM.directory));
-
-        p.waitFor();
 
     }
 
