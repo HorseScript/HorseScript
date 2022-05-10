@@ -10,6 +10,7 @@ import hs_c.x;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -92,10 +93,15 @@ public class Compiler {
         WorkingFile += "\n" + toRead;
 
 
-        String FinalFile = "";
+
+
+
+
 
 
         // TIME TO MINIFY
+
+        String FinalFile = "";
 
         for (String line : WorkingFile.split("\\n")) {
 
@@ -110,13 +116,13 @@ public class Compiler {
                 line = "";
             }
 
-            FinalFile += line;
+            FinalFile += line.replaceAll("\t", "").replaceAll("\n", "").replaceAll("\\n", "");
 
 
         }
 
 
-        System.out.println(FinalFile);
+        FinalFile = FinalFile.replaceAll("\n", "");
 
 
 
@@ -136,6 +142,13 @@ public class Compiler {
         } else {
             x.log("File " + outputFile.getName() + " was not created.");
         }
+
+
+        FileWriter fw = new FileWriter(outputFile);
+        fw.write(FinalFile);
+        fw.close();
+
+        x.log("File " + outputFile.getName() + " was written.");
 
 
 
