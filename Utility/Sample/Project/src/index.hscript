@@ -1,3 +1,5 @@
 horse print "Hello, world!";;
 horse print "Hello, horse!";;
+
 horse print "HorseScript is awesome!";;
+~ This comment should be removed on minify.

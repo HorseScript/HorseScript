@@ -38,7 +38,7 @@ public class Compiler {
 
     private static void minify () throws Exception {
 
-        String WorkingFile = "";
+        StringBuilder WorkingFile = new StringBuilder();
 
         for (File file : Objects.requireNonNull(options.srcDir.listFiles())) {
 
@@ -60,7 +60,7 @@ public class Compiler {
                         String toRead = sc.next();
 
 
-                        WorkingFile += "\n" + toRead;
+                        WorkingFile.append(toRead);
 
 
                     } else {
@@ -90,7 +90,7 @@ public class Compiler {
         String toRead = sc.next();
 
 
-        WorkingFile += "\n" + toRead;
+        WorkingFile.append(toRead);
 
 
 
@@ -101,28 +101,32 @@ public class Compiler {
 
         // TIME TO MINIFY
 
-        String FinalFile = "";
+        StringBuilder FinalFile = new StringBuilder();
 
-        for (String line : WorkingFile.split("\\n")) {
+        for (String line : WorkingFile.toString().split("\\n")) {
+
+            if (line.equals("")) {
+                continue;
+            }
 
 
             // Remove empty lines
             if (line.replaceAll(" ", "").replaceAll("\t", "").replaceAll("\n", "").replaceAll("\\n", "").equals("")) {
-                line = "";
+                continue;
             }
 
             // Remove comments
             if (line.replaceAll(" ", "").replaceAll("\t", "").replaceAll("\n", "").replaceAll("\\n", "").startsWith("~")) {
-                line = "";
+                continue;
             }
 
-            FinalFile += line.replaceAll("\t", "").replaceAll("\n", "").replaceAll("\\n", "");
+            FinalFile.append(line.replaceAll("\t", "").replaceAll("\n", "").replaceAll("\\n", ""));
 
 
         }
 
 
-        FinalFile = FinalFile.replaceAll("\n", "");
+        FinalFile = new StringBuilder(FinalFile.toString().replaceAll("\n", ""));
 
 
 
@@ -145,7 +149,7 @@ public class Compiler {
 
 
         FileWriter fw = new FileWriter(outputFile);
-        fw.write(FinalFile);
+        fw.write(FinalFile.toString());
         fw.close();
 
         x.log("File " + outputFile.getName() + " was written.");
