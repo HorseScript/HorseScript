@@ -82,8 +82,8 @@ object horse {
         f.setSize(400, 400)
         f.defaultCloseOperation = JFrame.DISPOSE_ON_CLOSE
 
-        val e : JLabel = JLabel("HorseScript Popup")
-        e.setSize(200, 200)
+        val e : JLabel = JLabel(line)
+        e.setSize(400, 300)
         f.add(e)
 
         f.pack()

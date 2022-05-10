@@ -163,26 +163,26 @@ public class Compiler {
     }
 
 
-    private static void beautify () {
+    private static void beautify () throws Exception {
 
 
 
 
     }
 
-    private static void optimize () {
+    private static void optimize () throws Exception {
 
 
     }
 
 
-    private static void fix () {
+    private static void fix () throws Exception {
 
 
     }
 
 
-    private static void check () {
+    private static void check () throws Exception {
 
         if (!options.runTests) {
 
