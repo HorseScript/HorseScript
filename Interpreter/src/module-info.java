@@ -11,7 +11,6 @@ module Interpreter {
     requires java.desktop;
     requires Color;
     requires org.jetbrains.annotations;
-    requires Terminal;
 
 
     exports Interpreter;
