@@ -5,11 +5,9 @@
 
 package Terminal.Modules
 
+import Interpreter.Main
 import Terminal.ROM
-import java.io.File
 import java.io.IOException
-import java.nio.file.Files
-import java.nio.file.StandardCopyOption
 import java.util.*
 
 class horse {
@@ -24,12 +22,12 @@ class horse {
             val cmd3 : String = cmd2.replace(" ".toRegex(), "").replace(uuid.toRegex(), " ")
             if (cmd3 == "horse dist") {
                 if (!ROM.requireDir()) return
-                Files.copy(
-                    File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),
-                    File(ROM.directory + "/Interpreter.jar").toPath(),
-                    StandardCopyOption.REPLACE_EXISTING
-                )
-                Runtime.getRuntime().exec("java -jar Interpreter.jar 5 dist/index.hscript", null, File(ROM.directory))
+
+
+                val toSend : Array<String> = arrayOf("5", "dist/index.hscript")
+
+                Main.main(toSend)
+
             }
         }
 

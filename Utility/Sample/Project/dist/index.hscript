@@ -1,1 +1,1 @@
-var new String aString Whatsup people;;horse print aString;;horse print "Hello, world!";;horse print "Hello, horse!";;horse print "HorseScript is awesome!";;
+var new String aString Whatsup people;;var new String horse This one is called horse;;horse print aString;;horse print "Hello, world!";;horse print "Hello, horse!";;horse print "HorseScript is awesome!";;

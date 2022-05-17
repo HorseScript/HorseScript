@@ -44,7 +44,7 @@ class hsx {
                 }
             } else {
                 println("$type is not a supported compiler of HorseScript.")
-                println("Supported consoles: hsc")
+                println("Supported compilers: hsc")
                 print("If you want a new compiler to be added, please contact us on GitHub: ")
                 println("https://github.com/HorseScript/HorseScript")
                 return
