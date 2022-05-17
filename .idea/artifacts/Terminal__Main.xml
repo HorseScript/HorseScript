@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Terminal: Main">
+    <output-path>$PROJECT_DIR$/build</output-path>
+    <root id="archive" name="Terminal.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/Terminal/src/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="HorseScript" />
+      <element id="module-output" name="Interpreter" />
+      <element id="module-output" name="Color" />
+      <element id="module-output" name="Terminal" />
+      <element id="module-output" name="Utility" />
+      <element id="module-output" name="Compiler" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/annotations-20.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-reflect.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-test.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/gson-2.9.0.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Kotlin: KotlinJavaRuntime" />
+      <element id="library" level="project" name="gson-2.9.0" />
+      <element id="file-copy" path="$PROJECT_DIR$/lib/annotations-20.1.0.jar" />
+      <element id="file-copy" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar" />
+    </root>
+  </artifact>
+</component>

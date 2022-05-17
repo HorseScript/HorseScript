@@ -9,7 +9,6 @@
         <artifact name="Compiler: Main" />
         <artifact name="Interpreter: Main" />
         <artifact name="Interpreter Main, export to Terminal" />
-        <artifact name="Terminal Main" />
       </option>
     </method>
   </configuration>

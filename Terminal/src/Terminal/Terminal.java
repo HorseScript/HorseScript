@@ -5,6 +5,7 @@
 
 package Terminal;
 
+import Interpreter.Console;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -203,10 +204,18 @@ public class Terminal {
         if (type.equals("hscript")) {
 
 
-            Files.copy(new File(ROM.workingDirectory + "/Terminal/Interpreter.jar").toPath(),new File(ROM.directory + "/Interpreter.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
 
-            Process p = Runtime.getRuntime().exec("java -jar Interpreter.jar 3", null, new File(ROM.directory));
-            p.waitFor();
+                Thread cons = new Thread(() -> {
+
+                    try {
+                        Console.main(null);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                });
+                cons.setName("HorseScript Console");
+                cons.start();
 
 
         } else {

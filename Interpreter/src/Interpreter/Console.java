@@ -14,7 +14,7 @@ public class Console {
     private static volatile boolean running = false;
 
 
-    public static void main(String[] args) throws Exception {
+    public static void main (String[] args) throws Exception {
 
         System.out.println(c.yellow + "HorseScript Console" + c.white);
 

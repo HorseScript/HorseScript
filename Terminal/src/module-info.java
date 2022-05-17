@@ -7,5 +7,6 @@ module Terminal {
 
     requires org.jetbrains.annotations;
     requires Color;
+    requires Interpreter;
 
 }
