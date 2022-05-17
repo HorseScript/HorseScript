@@ -5,6 +5,7 @@
 
 package Compiler;
 
+import Color.c;
 import Compiler.config.Options;
 import Compiler.configfile.HorseScript;
 import Compiler.configfile.compilerOptions;
@@ -122,12 +123,12 @@ public final @NotNull class x {
 
 
             if (success) {
-                log("outDir created");
+                log(c.green + "outDir created");
             } else {
-                log("outDir not created");
+                log(c.yellow + "outDir not created");
             }
         } else {
-            log("outDir exists");
+            log(c.green + "outDir exists");
         }
         // end outDir
 
@@ -161,7 +162,7 @@ public final @NotNull class x {
         try {
             Main.main(args);
         } catch (Exception e) {
-            log("Error: " + e.getMessage());
+            log(c.red + "Error: " + e.getMessage());
         }
     }
 

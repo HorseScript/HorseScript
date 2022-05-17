@@ -5,6 +5,7 @@
 
 package Compiler.HSC;
 
+import Color.c;
 import Compiler.config.Options;
 import Compiler.x;
 import org.jetbrains.annotations.NotNull;
@@ -44,7 +45,7 @@ public class Compiler {
 
             if (file.isFile()) {
 
-                x.log("File " + file.getName() + " is a file.");
+                x.log(c.green + "File " + file.getName() + " is a file.");
 
                 if (file.getName().endsWith(".hscript")) {
 
@@ -64,17 +65,17 @@ public class Compiler {
 
 
                     } else {
-                        x.log("Index will be compiled last.");
+                        x.log(c.blue + "Index will be compiled last.");
                     }
 
 
                 } else {
-                    x.log("File " + file.getName() + " is not a .hscript file.");
+                    x.log(c.yellow + "File " + file.getName() + " is not a .hscript file.");
                 }
 
 
             } else {
-                x.log("File " + file.getName() + " is not a file.");
+                x.log(c.yellow + file.getName() + " is not a file.");
             }
 
 
@@ -138,16 +139,16 @@ public class Compiler {
 
 
         if (outputFile.delete()) {
-            x.log("File " + outputFile.getName() + " was deleted.");
+            x.log(c.green + "File " + outputFile.getName() + " was deleted.");
         } else {
-            x.log("File " + outputFile.getName() + " was not deleted.");
+            x.log(c.yellow +"File " + outputFile.getName() + " was not deleted.");
         }
 
 
         if (outputFile.createNewFile()) {
-            x.log("File " + outputFile.getName() + " was created.");
+            x.log(c.green +"File " + outputFile.getName() + " was created.");
         } else {
-            x.log("File " + outputFile.getName() + " was not created.");
+            x.log(c.red + "File " + outputFile.getName() + " was not created.");
         }
 
 
@@ -155,7 +156,7 @@ public class Compiler {
         fw.write(FinalFile.toString());
         fw.close();
 
-        x.log("File " + outputFile.getName() + " was written.");
+        x.log(c.green + "File " + outputFile.getName() + " was written.");
 
 
 

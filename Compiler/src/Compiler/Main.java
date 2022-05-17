@@ -6,6 +6,7 @@
 package Compiler;
 
 
+import Color.c;
 import Compiler.HSC.Compiler;
 import Compiler.config.Options;
 import Compiler.configfile.HorseScript;
@@ -20,7 +21,7 @@ public class Main {
 
         Options OPTIONS = x.convert(toConvert);
 
-        System.out.println(OPTIONS);
+        x.log(c.blue + OPTIONS);
 
         // then we compile!
 
