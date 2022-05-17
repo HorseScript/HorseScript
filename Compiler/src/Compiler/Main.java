@@ -11,6 +11,7 @@ import Compiler.config.Options;
 import Compiler.configfile.HorseScript;
 import Compiler.configfile.ParseConfig;
 
+
 public class Main {
 
     public static void main (String[] args) throws Exception {
