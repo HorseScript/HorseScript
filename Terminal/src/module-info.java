@@ -9,5 +9,5 @@ module Terminal {
     requires Color;
     requires Interpreter;
     requires kotlin.stdlib;
-
+    requires Compiler;
 }

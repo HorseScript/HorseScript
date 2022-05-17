@@ -34,6 +34,7 @@ class console {
             } else {
                 println("$type is not a supported console of HorseScript.")
                 println("Supported consoles: hscript")
+                print("If you want a new console to be added, please contact us on GitHub: ")
                 println("https://github.com/HorseScript/HorseScript")
                 return
             }

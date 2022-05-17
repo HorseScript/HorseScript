@@ -33,7 +33,7 @@ class eval {
             } else {
                 println("$type is not a supported dialect of HorseScript.")
                 println("Supported dialects: hscript")
-                print("If you want to add this dialect, please see us on GitHub: ")
+                print("If you want a new dialect to be added, please contact us on GitHub: ")
                 println("https://github.com/HorseScript/HorseScript")
                 return
             }

@@ -5,16 +5,10 @@
 
 package Terminal;
 
-import Interpreter.Console;
 import Terminal.Modules.*;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
-import java.util.UUID;
 
 
 public class Terminal {
@@ -101,6 +95,14 @@ public class Terminal {
 
         } else if (input.startsWith("dir ")) {
             dir._changeDir(input);
+
+
+        } else if (input.replace(" ", "").equals("hsx")) {
+            hsx._help(input);
+
+
+        } else if (input.startsWith("hsx ")) {
+            hsx._startsWith(input);
 
 
 

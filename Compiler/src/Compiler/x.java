@@ -157,4 +157,13 @@ public final @NotNull class x {
     }
 
 
+    public static void main (String[] args) {
+        try {
+            Main.main(args);
+        } catch (Exception e) {
+            log("Error: " + e.getMessage());
+        }
+    }
+
+
 }
