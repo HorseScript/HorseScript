@@ -12,6 +12,7 @@ module Compiler {
     requires org.jetbrains.annotations;
     requires com.google.gson;
     requires Color;
+    requires kotlin.stdlib;
 
     exports Compiler;
 

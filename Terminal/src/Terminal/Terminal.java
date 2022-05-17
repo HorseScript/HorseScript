@@ -203,19 +203,13 @@ public class Terminal {
 
         if (type.equals("hscript")) {
 
-
-
-                Thread cons = new Thread(() -> {
-
                     try {
                         Console.main(null);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
 
-                });
-                cons.setName("HorseScript Console");
-                cons.start();
+
 
 
         } else {

@@ -35,5 +35,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="Color" />
+    <orderEntry type="library" name="Kotlin: KotlinJavaRuntime" level="project" />
   </component>
 </module>

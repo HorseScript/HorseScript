@@ -7,6 +7,7 @@
 /** Color codes for HorseScript */
 module Color {
     requires org.jetbrains.annotations;
+    requires kotlin.stdlib;
 
 
     exports Color;
