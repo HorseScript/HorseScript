@@ -7,6 +7,7 @@ package Interpreter.horse
 
 import Color.c
 import Interpreter.RAM
+import Interpreter.Servers.Runner
 import Interpreter.resources.Constant
 import Interpreter.resources.HorseError
 import Interpreter.resources.SearchTypes
@@ -29,6 +30,8 @@ object horse {
             horse.print(line.replaceFirst("horse ", ""))
         } else if (line2.startsWith("frame")) {
             horse.frame(line.replaceFirst("horse ", ""))
+        } else if (line2.startsWith("server")) {
+            Runner.main(null)
         } else if (line.equals("horse")) {
             println("HorseScript Horse Library | Version: $version")
         } else if (line2.startsWith("help")) {
@@ -89,6 +92,10 @@ object horse {
 
         f.pack()
         f.isVisible = true
+    }
+
+    @JvmStatic fun server (line : String) {
+
     }
 
 }

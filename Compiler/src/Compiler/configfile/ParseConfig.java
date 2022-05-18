@@ -151,9 +151,7 @@ public class ParseConfig {
             reader.endObject(); // }
             reader.endObject(); // }
 
-        } catch (Exception e) {
-
-        }
+        } catch (Exception ignored) {}
 
 
 

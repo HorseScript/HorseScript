@@ -5,8 +5,7 @@
 
 package Terminal.Modules
 
-import Compiler.*;
-import Interpreter.Console
+import Compiler.x
 import java.util.*
 
 class hsx {
@@ -16,8 +15,9 @@ class hsx {
 
         @JvmStatic fun _help (command : String) {
 
-
-
+            println("HorseScriptX command: hsx <type>")
+            println("This command will use a <type> HorseScript compiler.")
+            println("<type> can be replaced with hsc, or any supported compiler.")
 
         }
 

@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Color Codes">
+  <artifact type="jar" build-on-make="true" name="Color Codes">
     <output-path>$PROJECT_DIR$/build</output-path>
     <root id="archive" name="ColorCodes.jar">
       <element id="module-output" name="Color" />

@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Terminal: Main">
+  <artifact type="jar" build-on-make="true" name="Terminal: Main">
     <output-path>$PROJECT_DIR$/build</output-path>
     <root id="archive" name="Terminal.jar">
       <element id="directory" name="META-INF">
