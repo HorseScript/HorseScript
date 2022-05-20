@@ -232,7 +232,9 @@ public class RAM {
 
         }
 
-        System.out.println("No match found.");
+        if (RAM.debug) {
+            System.out.println("No match found.");
+        }
 
         return Result.NOT_FOUND;
 
@@ -289,7 +291,9 @@ public class RAM {
 
         }
 
-        System.out.println("No match found.");
+        if (RAM.debug) {
+            System.out.println("No match found.");
+        }
 
         return Result.NOT_FOUND;
 
@@ -343,7 +347,9 @@ public class RAM {
 
         }
 
-        System.out.println("No match found.");
+        if (RAM.debug) {
+            System.out.println("No match found.");
+        }
 
         return Result.NOT_FOUND;
     }
@@ -395,7 +401,7 @@ public class RAM {
 
         }
 
-        System.out.println("No match found.");
+        if (RAM.debug) { System.out.println("No match found."); }
 
         return Result.NOT_FOUND;
     }
@@ -451,7 +457,9 @@ public class RAM {
 
         }
 
-        System.out.println("No match found.");
+        if (RAM.debug) {
+            System.out.println("No match found.");
+        }
 
         return Result.NOT_FOUND;
     }
