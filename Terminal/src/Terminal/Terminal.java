@@ -89,20 +89,29 @@ public class Terminal {
             horse._startsWith(input);
 
 
-        } else if (input.replace(" ", "").equals("dir")) {
+        } else if (input.replace(" ", "").equals("dir") || input.replace(" ", "").equals("cd")) {
             dir._help(input);
 
 
-        } else if (input.startsWith("dir ")) {
+        } else if (input.startsWith("dir ") || input.startsWith("cd ")) {
             dir._changeDir(input);
 
 
-        } else if (input.replace(" ", "").equals("hsx")) {
+        } else if (input.replace(" ", "").equals("hsx") || input.replace(" ", "").equals("npx")) {
             hsx._help(input);
 
 
-        } else if (input.startsWith("hsx ")) {
+        } else if (input.startsWith("hsx ") || input.startsWith("npx ")) {
             hsx._startsWith(input);
+
+
+
+        } else if (input.replace(" ", "").equals("hsc") || input.replace(" ", "").equals("tsc")) {
+            hsx._help("hsx hsc");
+
+
+        } else if (input.startsWith("hsc ") || input.startsWith("tsc ")) {
+            hsx._startsWith("hsx hsc");
 
 
 

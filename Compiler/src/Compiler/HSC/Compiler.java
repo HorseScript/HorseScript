@@ -8,6 +8,7 @@ package Compiler.HSC;
 import Color.c;
 import Compiler.config.Options;
 import Compiler.x;
+import Interpreter.Interpreter;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -27,7 +28,7 @@ public class Compiler {
         Compiler.options = options;
 
         switch (options.task) {
-            case minify -> minify();
+            case minify -> minify(true);
             case beautify -> beautify();
             case optimize -> optimize();
             case fix -> fix();
@@ -37,7 +38,7 @@ public class Compiler {
     }
 
 
-    private static void minify () throws Exception {
+    private static String minify (Boolean emit) throws Exception {
 
         StringBuilder WorkingFile = new StringBuilder();
 
@@ -133,33 +134,33 @@ public class Compiler {
         FinalFile = new StringBuilder(FinalFile.toString().replaceAll("\n", ""));
 
 
+        if (emit) {
+
+            File outputFile = new File(options.outDir + "/index.hscript");
 
 
-        File outputFile = new File(options.outDir + "/index.hscript");
+            if (outputFile.delete()) {
+                x.log(c.green + "File " + outputFile.getName() + " was deleted.");
+            } else {
+                x.log(c.yellow + "File " + outputFile.getName() + " was not deleted.");
+            }
 
 
-        if (outputFile.delete()) {
-            x.log(c.green + "File " + outputFile.getName() + " was deleted.");
-        } else {
-            x.log(c.yellow +"File " + outputFile.getName() + " was not deleted.");
+            if (outputFile.createNewFile()) {
+                x.log(c.green + "File " + outputFile.getName() + " was created.");
+            } else {
+                x.log(c.red + "File " + outputFile.getName() + " was not created.");
+            }
+
+
+            FileWriter fw = new FileWriter(outputFile);
+            fw.write(FinalFile.toString());
+            fw.close();
+
+            x.log(c.green + "File " + outputFile.getName() + " was written.");
         }
 
-
-        if (outputFile.createNewFile()) {
-            x.log(c.green +"File " + outputFile.getName() + " was created.");
-        } else {
-            x.log(c.red + "File " + outputFile.getName() + " was not created.");
-        }
-
-
-        FileWriter fw = new FileWriter(outputFile);
-        fw.write(FinalFile.toString());
-        fw.close();
-
-        x.log(c.green + "File " + outputFile.getName() + " was written.");
-
-
-
+        return FinalFile.toString();
 
     }
 
@@ -187,8 +188,32 @@ public class Compiler {
 
         if (!options.runTests) {
 
-            x.log("No tests to run.");
-            return;
+            x.log("\n\n");
+            x.log(c.gray + "[HS-C] " + c.purple + "*CHECK* " + c.green + "test is false in HorseScript.json, therefore there are no tests to run.\n");
+            x.log(c.yellow + "No tests to run.\n");
+
+        } else {
+
+            String toTest = minify(false);
+
+            x.log(c.yellow + "Running tests...");
+            x.log(c.white + "\n{\n");
+            Boolean NoErrors = Interpreter.interpret(toTest);
+            x.log(c.white + "\n}\n");
+
+            if (NoErrors) {
+
+                x.log("\n\n");
+                x.log(c.gray + "[HS-C] " + c.purple + "*CHECK* " + c.green + "No errors encountered.\n");
+                x.log(c.green + "Tests passed.\n");
+
+            } else {
+
+                x.log("\n\n");
+                x.log(c.gray + "[HS-C] " + c.purple + "*CHECK* " + c.red + "Errors encountered.\n");
+                x.log(c.red + "Tests failed.\n");
+
+            }
 
         }
 

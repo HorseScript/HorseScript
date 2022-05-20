@@ -3,8 +3,11 @@
  * All rights reserved.
  */
 
-package Interpreter;import Interpreter.horse.*;
+package Interpreter;
+
+import Interpreter.horse.*;
 import Interpreter.resources.HorseError;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +19,7 @@ public class Interpreter {
         System.out.println("To run the HorseScript Interpreter, run the \"Main\" class.");
     }
 
-    public static void interpret (String code) throws Exception {
+    public static @NotNull Boolean interpret (String code) throws Exception {
 
 
 
@@ -76,9 +79,13 @@ public class Interpreter {
 
             } else {
                 HorseError.badLine(line, null);
+                return false;
             }
 
         }
+
+
+        return true;
 
     }
 

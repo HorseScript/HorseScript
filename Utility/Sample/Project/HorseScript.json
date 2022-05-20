@@ -1,8 +1,8 @@
 {
-  "src": "./src/", /* Source directory to pull files from */
-  "exclude": [""], /* Excluded files from the build */
+  "src": "./src/",                /* Source directory to pull files from */
+  "exclude": [""],                /* Excluded files from the build */
 
-  "compilerOptions": { /* HorseScript Compiler options */
+  "compilerOptions": {            /* HorseScript Compiler options */
 
     "type": "minify",             /* Compiler job */
     "out": "./dist/",             /* Output directory */
