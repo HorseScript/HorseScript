@@ -45,6 +45,9 @@ object horse {
 
     @JvmStatic fun print (line: String) {
 
+
+        var printingVar : Boolean = false
+
         if (line == "print" || line == "print ") {
             throw IllegalArgumentException(c.yellow + "Print requires a String. Usage: " + c.cyan + "horse print \"String\"" + c.white)
         }
@@ -54,14 +57,16 @@ object horse {
 
         if (!line_1.startsWith("\"") || !line_1.endsWith("\"")) {
 
-            val variableToFind = RAM.getVar(line_1, SearchTypes.EQUALS_NAME);
+            val variableToFind = RAM.getVar(line_1)
 
             if (variableToFind.javaClass == Variable::class.java) {
 
+                printingVar = true
                 println((variableToFind as Variable).content)
 
             } else if (variableToFind.javaClass == Constant::class.java) {
 
+                printingVar = true
                 println((variableToFind as Constant).content)
 
             } else {
@@ -75,8 +80,10 @@ object horse {
 
         val output : String = line_1.replace("\"", "");
 
-        println(output)
-
+        if (!printingVar) {
+            println(output)
+        }
+        return
     }
 
     @JvmStatic fun frame (line: String) {

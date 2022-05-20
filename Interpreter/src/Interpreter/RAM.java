@@ -6,14 +6,13 @@
 package Interpreter;
 
 import Interpreter.resources.Constant;
-import Interpreter.resources.Result;
-import Interpreter.resources.SearchTypes;
+import Interpreter.resources.HorseError;
 import Interpreter.resources.Variable;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 
 public class RAM {
@@ -38,431 +37,93 @@ public class RAM {
 
     // BEGIN VARIABLE HANDLING
 
-    public static volatile ArrayList<Object> variables = new ArrayList<>();
+    private static final HashMap<String, Object> variables = new HashMap<>();
 
-    public static @NotNull Boolean addVar (Object VariableOrConst) {
+    public static @NotNull Boolean addVar (@NotNull Object VariableOrConst) {
 
-        if (VariableOrConst.getClass() == Variable.class) {
+
+        String varName;
+        Class<? extends @NotNull Object> varType = VariableOrConst.getClass();
+
+
+        if (varType == Variable.class) {
+
+            varName = ((Variable) VariableOrConst).name;
+        }
+        else if (varType == Constant.class) {
+
+            varName = ((Constant) VariableOrConst).name;
+        }
+        else {
+            HorseError.badLine("", "Only variables and constants can be added to the RAM.");
+            return false;
+        }
+
+
+        if (getDefenition(varName)) {
+            HorseError.badLine("", "Variable " + varName + " is already defined.");
+            return false;
+
+        } else {
+
+
+
+
+        if (varType == Variable.class) {
 
             if (((Variable) VariableOrConst).validate()) {
+                variables.put(varName, VariableOrConst);
+                return true;
+            } else {
+                HorseError.badLine("", "Variable " + varName + " is not valid.");
+                return false;
+            }
 
-                if (getVar(((Variable) VariableOrConst).name, SearchTypes.EQUALS_NAME) == null) {
+        } else {
 
-                    System.out.println("A variable with the name " + ((Variable) VariableOrConst).name + " already exists.");
-                    return Boolean.FALSE;
+                if (((Constant) VariableOrConst).validate()) {
+                    variables.put(varName, VariableOrConst);
+                    return true;
                 } else {
-
-                    variables.add(VariableOrConst);
-                    return Boolean.TRUE;
+                    HorseError.badLine("", "Constant " + varName + " is not valid.");
+                    return false;
                 }
-            } else {
-                System.out.println("Variable " + ((Variable) VariableOrConst).name + " is invalid.");
-                return Boolean.FALSE;
+
             }
-
-
-
-        } else if (VariableOrConst.getClass() == Constant.class) {
-
-            if (getVar(((Constant) VariableOrConst).name, SearchTypes.EQUALS_NAME) == null) {
-
-                System.out.println("A constant with the name " + ((Constant) VariableOrConst).name + " already exists.");
-                return Boolean.FALSE;
-            } else {
-
-                variables.add(VariableOrConst);
-                return Boolean.TRUE;
-            }
-
-        } else {
-            System.out.println(VariableOrConst.getClass() + " variables cannot be added to the variables RAM.");
-            return Boolean.FALSE;
         }
-    }
 
-    public static void editVar (Variable varToEdit, Variable newVar) {
-
-        if (varToEdit.name.equals(newVar.name)) {
-
-
-            int index = variables.indexOf(varToEdit);
-
-            variables.set(index, newVar);
-        } else {
-            System.out.println("The variable names do not match.");
-        }
 
     }
 
     public static @NotNull String getAll () {
-        return Arrays.toString(variables.toArray());
+
+        // Collection<Object> objects = variables.values();
+        // String output = Arrays.toString(objects.toArray());
+
+        return Arrays.toString(variables.values().toArray());
     }
 
+    public static @NotNull Boolean getDefenition (@NotNull String match) {
 
+        /*
+        Object output = variables.get(match);
 
-    public static Object getVar (@NotNull String match, @NotNull SearchTypes type) {
-
-
-
-
-        switch (type) {
-
-            case CONTAINS_ANY: if (CONTAINS_ANY(match) != Boolean.FALSE) return CONTAINS_ANY(match);
-
-            case CONTAINS_NAME: if (CONTAINS_NAME(match) != Boolean.FALSE) return CONTAINS_NAME(match);
-
-            case CONTAINS_CONTENT: if (CONTAINS_CONTENT(match) != Boolean.FALSE) return CONTAINS_CONTENT(match);
-
-            case EQUALS_ANY: if (EQUALS_NAME(match) != Boolean.FALSE) return EQUALS_ANY(match);
-
-            case EQUALS_NAME: if (EQUALS_NAME(match) != Boolean.FALSE) return EQUALS_NAME(match);
-
-            case EQUALS_CONTENT: if (EQUALS_CONTENT(match) != Boolean.FALSE) return EQUALS_CONTENT(match);
-
-            default: throw new IllegalStateException("You need a valid search type.");
+        if (output == null) {
+            return false;
+        } else {
+            return true;
         }
+        */
 
-
+        return variables.get(match) != null;
     }
 
-    private static @NotNull Object CONTAINS_ANY (String match) {
+    public static Object getVar (@NotNull String match) {
 
-        Object output = new Object();
-
-        // For each object in [variables]
-        for (Object o : variables) {
-
-            Variable v = null;
-            Constant c = null;
-
-            // TRUE if it's a constant, FALSE if it's a variable
-            Boolean _constant;
-
-
-            if (o.getClass() == Variable.class) { // If o is a variable
-                v = (Variable) o; // Set v to o
-                _constant = false; // Set _constant to FALSE
-            } else if (o.getClass() == Constant.class) { // If o is a constant
-                c = (Constant) o; // Set c to o
-                _constant = true; // Set _constant to TRUE
-            } else {
-                throw new IllegalStateException("Only variables and constants should be in [variables].");
-            }
-
-
-            if (_constant) {
-
-                if (c.name.contains(match) || c.content.toString().contains(match)) {
-                    return c;
-                } else {
-                    continue;
-                }
-
-
-            } else if (!_constant) {
-
-                if (v.name.contains(match) || v.content.toString().contains(match)) {
-                    return v;
-                } else {
-                    continue;
-                }
-
-            } else {
-                throw new IllegalStateException("Boolean should be true or false.");
-            }
-
-
-
-        }
-
-        System.out.println("No match found.");
-
-        return Result.NOT_FOUND;
-
+        return variables.get(match);
 
     }
 
-    private static @NotNull Object CONTAINS_NAME (String match) {
-
-        Object output = new Object();
-
-        // For each object in [variables]
-        for (Object o : variables) {
-
-            Variable v = null;
-            Constant c = null;
-
-            // TRUE if it's a constant, FALSE if it's a variable
-            Boolean _constant;
-
-
-            if (o.getClass() == Variable.class) { // If o is a variable
-                v = (Variable) o; // Set v to o
-                _constant = false; // Set _constant to FALSE
-            } else if (o.getClass() == Constant.class) { // If o is a constant
-                c = (Constant) o; // Set c to o
-                _constant = true; // Set _constant to TRUE
-            } else {
-                throw new IllegalStateException("Only variables and constants should be in [variables].");
-            }
-
-
-            if (_constant) {
-
-                if (c.name.contains(match)) {
-                    return c;
-                } else {
-                    continue;
-                }
-
-
-            } else if (!_constant) {
-
-                if (v.name.contains(match)) {
-                    return v;
-                } else {
-                    continue;
-                }
-
-            } else {
-                throw new IllegalStateException("Boolean should be true or false.");
-            }
-
-
-
-        }
-
-        if (RAM.debug) {
-            System.out.println("No match found.");
-        }
-
-        return Result.NOT_FOUND;
-
-
-    }
-
-    private static @NotNull Object CONTAINS_CONTENT (String match) {
-
-        Object output = new Object();
-
-        // For each object in [variables]
-        for (Object o : variables) {
-
-            Variable v = null;
-            Constant c = null;
-
-            // TRUE if it's a constant, FALSE if it's a variable
-            Boolean _constant;
-
-
-            if (o.getClass() == Variable.class) { // If o is a variable
-                v = (Variable) o; // Set v to o
-                _constant = false; // Set _constant to FALSE
-            } else if (o.getClass() == Constant.class) { // If o is a constant
-                c = (Constant) o; // Set c to o
-                _constant = true; // Set _constant to TRUE
-            } else {
-                throw new IllegalStateException("Only variables and constants should be in [variables].");
-            }
-
-
-            if (_constant) {
-
-                if (c.content.toString().contains(match)) {
-                    return c;
-                } else {
-                    continue;
-                }
-
-
-            } else if (!_constant) {
-
-                if (v.content.toString().contains(match)) {
-                    return v;
-                } else {
-                    continue;
-                }
-
-            } else {
-                throw new IllegalStateException("Boolean should be true or false.");
-            }
-
-
-
-        }
-
-        if (RAM.debug) {
-            System.out.println("No match found.");
-        }
-
-        return Result.NOT_FOUND;
-
-
-    }
-
-    private static @NotNull Object EQUALS_ANY (String match) {
-
-        Object output = new Object();
-
-
-        // For each object in [variables]
-        for (Object o : variables) {
-
-            Variable v = null;
-            Constant c = null;
-
-            // TRUE if it's a constant, FALSE if it's a variable
-            Boolean _constant;
-
-
-            if (o.getClass() == Variable.class) { // If o is a variable
-                v = (Variable) o; // Set v to o
-                _constant = false; // Set _constant to FALSE
-            } else if (o.getClass() == Constant.class) { // If o is a constant
-                c = (Constant) o; // Set c to o
-                _constant = true; // Set _constant to TRUE
-            } else {
-                throw new IllegalStateException("Only variables and constants should be in [variables].");
-            }
-
-
-            if (_constant) {
-
-                if (c.name.equals(match) || c.content.toString().equals(match)) {
-                    return c;
-                }
-
-
-            } else if (!_constant) {
-
-                if (v.name.equals(match) || v.content.toString().equals(match)) {
-                    return v;
-                }
-
-            } else {
-                throw new IllegalStateException("Boolean should be true or false.");
-            }
-
-
-
-        }
-
-        if (RAM.debug) {
-            System.out.println("No match found.");
-        }
-
-        return Result.NOT_FOUND;
-    }
-
-    private static @NotNull Object EQUALS_CONTENT (String match) {
-
-        Object output = new Object();
-
-
-        // For each object in [variables]
-        for (Object o : variables) {
-
-            Variable v = null;
-            Constant c = null;
-
-            // TRUE if it's a constant, FALSE if it's a variable
-            Boolean _constant;
-
-
-            if (o.getClass() == Variable.class) { // If o is a variable
-                v = (Variable) o; // Set v to o
-                _constant = false; // Set _constant to FALSE
-            } else if (o.getClass() == Constant.class) { // If o is a constant
-                c = (Constant) o; // Set c to o
-                _constant = true; // Set _constant to TRUE
-            } else {
-                throw new IllegalStateException("Only variables and constants should be in [variables].");
-            }
-
-
-            if (_constant) {
-
-                if (c.content.toString().equals(match)) {
-                    return c;
-                }
-
-
-            } else if (!_constant) {
-
-                if (v.content.toString().equals(match)) {
-                    return v;
-                }
-
-            } else {
-                throw new IllegalStateException("Boolean should be true or false.");
-            }
-
-
-
-        }
-
-        if (RAM.debug) { System.out.println("No match found."); }
-
-        return Result.NOT_FOUND;
-    }
-
-    private static @NotNull Object EQUALS_NAME (String match) {
-
-        Object output = new Object();
-
-
-        // For each object in [variables]
-        for (Object o : variables) {
-
-            Variable v = null;
-            Constant c = null;
-
-            // TRUE if it's a constant, FALSE if it's a variable
-            Boolean _constant;
-
-
-            if (o.getClass() == Variable.class) { // If o is a variable
-                v = (Variable) o; // Set v to o
-                _constant = false; // Set _constant to FALSE
-            } else if (o.getClass() == Constant.class) { // If o is a constant
-                c = (Constant) o; // Set c to o
-                _constant = true; // Set _constant to TRUE
-            } else {
-                throw new IllegalStateException("Only variables and constants should be in [variables].");
-            }
-
-
-            if (_constant) {
-
-                if (c.name.equals(match)) {
-                    return c;
-                } else {
-                    continue;
-                }
-
-
-            } else if (!_constant) {
-
-                if (v.name.equals(match)) {
-                    return v;
-                } else {
-                    continue;
-                }
-
-            } else {
-                throw new IllegalStateException("Boolean should be true or false.");
-            }
-
-
-
-        }
-
-        if (RAM.debug) {
-            System.out.println("No match found.");
-        }
-
-        return Result.NOT_FOUND;
-    }
 
     // END VARIABLE HANDLING
 

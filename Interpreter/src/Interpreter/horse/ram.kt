@@ -64,7 +64,7 @@ object ram {
 
 
 
-        if (Objects.equals(RAM.getVar(varName, SearchTypes.EQUALS_NAME), Result.NOT_FOUND)) {
+        if (Objects.equals(RAM.getVar(varName), Result.NOT_FOUND)) {
             println("HorseScript RAM ConsoleUI: Not found")
         } else {
 
@@ -73,10 +73,10 @@ object ram {
 
             val NewVar : Variable = Variable(varName, varContent, varTypeEnum)
 
-            val OldVar : Variable = RAM.getVar(varName, SearchTypes.EQUALS_NAME) as Variable
+            val OldVar : Variable = RAM.getVar(varName) as Variable
 
 
-            RAM.editVar(OldVar, NewVar)
+            // RAM.editVar(OldVar, NewVar)
 
             println("HorseScript RAM ConsoleUI: Edited")
         }
