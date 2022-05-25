@@ -7,7 +7,6 @@ package Interpreter.horse
 
 import Interpreter.RAM
 import Interpreter.resources.Result
-import Interpreter.resources.SearchTypes
 import Interpreter.resources.Variable
 import Interpreter.resources.VariableTyping
 import java.util.*
